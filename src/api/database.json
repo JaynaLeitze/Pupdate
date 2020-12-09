@@ -9,21 +9,6 @@
   ],
   "pets": [
     {
-      "id": 1
-    },
-    {
-      "data": {
-        "petName": "Ann",
-        "gender": "female",
-        "petBreed": "mutt",
-        "petAge": "10",
-        "petWeight": "5",
-        "petConditions": "",
-        "petMeds": ""
-      },
-      "id": 2
-    },
-    {
       "petName": "Champion",
       "gender": "male",
       "petBreed": "Pitt",

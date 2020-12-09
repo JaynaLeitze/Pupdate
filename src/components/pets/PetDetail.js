@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
+import { ParentContext } from "../pet-parents/PetParentProvider";
 
 export const PetDetails = (props) => {
   const { pets, addPets, getPetById } = useContext(PetContext);

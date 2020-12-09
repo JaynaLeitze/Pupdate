@@ -5,6 +5,7 @@ import { Login } from "./components/auth/Login";
 import { NavBar } from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import { Register } from "./components/auth/Register";
+import { PetList } from "./components/pets/PetList";
 
 export const Pupdate = () => {
   return (
@@ -14,7 +15,8 @@ export const Pupdate = () => {
           if (localStorage.getItem("pet_parent")) {
             return (
               <>
-                <Route render={(props) => <NavBar {...props} />} />
+                {/* <Route render={(props) => <NavBar {...props} />} /> */}
+
                 <Route render={(props) => <ApplicationViews {...props} />} />
               </>
             );

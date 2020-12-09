@@ -7,7 +7,9 @@ export const PetForm = (props) => {
   const { register, handleSubmit, watch, errors } = useForm();
   const { pet, setPet } = useState({});
   const onSubmit = (data) => {
-    addPet(data);
+    addPet(data, {
+      parentId: parseInt(localStorage.getItem("pet_parent")),
+    }).then(() => props.history.push("/pets"));
   };
 
   return (
