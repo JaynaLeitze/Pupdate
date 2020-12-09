@@ -5,8 +5,9 @@ import { PetContext } from "./PetProvider";
 export const PetForm = (props) => {
   const { addPet, getPets } = useContext(PetContext);
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = () => {
-    addPet;
+  const { pet, setPet } = useState({});
+  const onSubmit = (data) => {
+    addPet(data);
   };
 
   return (
@@ -21,11 +22,9 @@ export const PetForm = (props) => {
       <label>Breed:</label>
       <input name="petBreed" ref={register} placeholder="Breed" />
       <label>Age:</label>
-      <input name="petAge" ref={register} placeholder="Age"></input>
+      <input name="petAge" ref={register} placeholder="Age" />
       <label>Weight:</label>
-      <input name="petWeight" ref={register} placeholder="Weight">
-        lbs
-      </input>
+      <input name="petWeight" ref={register} placeholder="Weight" />
       <label>Chronic Conditions:</label>
       <input name="petConditions" ref={register} placeholder="Conditions" />
       <label>Medications:</label>

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 
-export const AnimalList = ({ history }) => {
-  const { pets, getPets } = useContext(PetContext);
+export const PetList = ({ history }) => {
+  const { pets, getPets, getPetById } = useContext(PetContext);
 
   useEffect(() => {
     getPets();
@@ -11,7 +11,7 @@ export const AnimalList = ({ history }) => {
   return (
     <>
       <h1>Your Pets</h1>
-      <button className="add__pet" onClick={() => history.push("/pets/create")}>
+      <button className="addPet" onClick={() => history.push("/pets/create")}>
         Add a Pet
       </button>
     </>

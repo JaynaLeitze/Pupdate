@@ -1,0 +1,40 @@
+{
+  "parents": [
+    {
+      "email": "leslie@pawnee.gov",
+      "password": "pawnee",
+      "name": "Leslie Knope",
+      "id": 1
+    }
+  ],
+  "pets": [
+    {
+      "id": 1
+    },
+    {
+      "data": {
+        "petName": "Ann",
+        "gender": "female",
+        "petBreed": "mutt",
+        "petAge": "10",
+        "petWeight": "5",
+        "petConditions": "",
+        "petMeds": ""
+      },
+      "id": 2
+    },
+    {
+      "petName": "Champion",
+      "gender": "male",
+      "petBreed": "Pitt",
+      "petAge": "3",
+      "petWeight": "60",
+      "petConditions": "",
+      "petMeds": "",
+      "id": 3
+    }
+  ],
+  "vets": [],
+  "records": [],
+  "symptoms": []
+}

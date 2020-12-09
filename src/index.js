@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { Pupdate } from "./Pupdate";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Pupdate />
-  </React.StrictMode>,
+  <Router>
+    <React.StrictMode>
+      <Pupdate />
+    </React.StrictMode>
+  </Router>,
   document.getElementById("root")
 );
 
