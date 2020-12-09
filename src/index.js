@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { PupdateImages } from "./components/pupdate";
 import "./index.css";
+import { Pupdate } from "./Pupdate";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PupdateImages />
+    <Pupdate />
   </React.StrictMode>,
   document.getElementById("root")
 );

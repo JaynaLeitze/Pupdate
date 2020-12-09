@@ -3,5 +3,5 @@ import { PetContext } from "./PetProvider";
 import "./Pet.css";
 
 export const AnimalDetails = (props) => {
-  const { pets };
+  const { pets, addPets };
 };
