@@ -5,6 +5,7 @@ import { Pet } from "./Pet";
 
 export const PetList = ({ history }) => {
   const { pets, getPets, getPetById } = useContext(PetContext);
+  const user = parseInt(localStorage.getItem("pet_parent"));
 
   useEffect(() => {
     getPets();
@@ -15,7 +16,7 @@ export const PetList = ({ history }) => {
       <h1>Your Pets</h1>
       <div className="yourPets">
         {pets.map((pet) => {
-          return <Pet key={pet.id} pet={pet} />;
+          if (pet.parentId === user) return <Pet key={pet.id} pet={pet} />;
         })}
       </div>
       <button className="addPet" onClick={() => history.push("/pets/create")}>

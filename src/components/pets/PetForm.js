@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { Route } from "react-router-dom";
 import { PetContext } from "./PetProvider";
 
 export const PetForm = (props) => {
@@ -8,6 +9,7 @@ export const PetForm = (props) => {
   const onSubmit = (data) => {
     data.parentId = parseInt(localStorage.getItem("pet_parent"));
     addPet(data);
+    props.history.push("/");
   };
   return (
     <form className="petForm" onSubmit={handleSubmit(onSubmit)}>
@@ -29,12 +31,7 @@ export const PetForm = (props) => {
       <label>Medications:</label>
       <input name="petMeds" ref={register} placeholder="Medications" />
 
-      <input
-        type="submit"
-        onClick={() => {
-          props.history.push("/pets");
-        }}
-      />
+      <input type="submit" />
     </form>
   );
 };

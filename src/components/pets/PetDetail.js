@@ -12,9 +12,9 @@ export const PetDetails = (props) => {
   });
   return (
     <section className="pet">
-      <h3 className="petName">{pet.name}</h3>
-      <div className="petBreed">{pet.breed}</div>
-      <div className="petAge">{pet.Age}</div>
+      <h3 className="petName">{pet.petName}</h3>
+      <div className="petBreed">{pet.petBreed}</div>
+      <div className="petAge">{pet.petAge}</div>
     </section>
   );
 };

@@ -39,7 +39,7 @@ export const Register = (props) => {
             .then((createdUser) => {
               if (createdUser.hasOwnProperty("id")) {
                 // The user id is saved under the key app_user_id in local Storage. Change below if needed!
-                localStorage.setItem("app_user_id", createdUser.id);
+                localStorage.setItem("pet_parent", createdUser.id);
                 props.history.push("/");
               }
             });
@@ -76,7 +76,7 @@ export const Register = (props) => {
 
       <form className="form--login" onSubmit={handleRegister}>
         <h1 className="h3 mb-3 font-weight-normal">
-          Please Register for Application Name
+          Please Register for Pupdate
         </h1>
         <fieldset>
           <label htmlFor="firstName"> First Name </label>
