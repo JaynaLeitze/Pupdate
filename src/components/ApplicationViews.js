@@ -11,11 +11,7 @@ export const ApplicationViews = (props) => {
     <>
       <PetParentProvider>
         <PetProvider>
-          <Route
-            exact
-            path="/pets"
-            render={(props) => <PetList {...props} />}
-          />
+          <Route exact path="/" render={(props) => <PetList {...props} />} />
 
           <Route
             exact

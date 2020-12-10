@@ -15,7 +15,7 @@ export const PetList = ({ history }) => {
       <h1>Your Pets</h1>
       <div className="yourPets">
         {pets.map((pet) => {
-          return <Pet key={pet.id} />;
+          return <Pet key={pet.id} pet={pet} />;
         })}
       </div>
       <button className="addPet" onClick={() => history.push("/pets/create")}>
