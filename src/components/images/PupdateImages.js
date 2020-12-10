@@ -26,7 +26,7 @@ export const PupdateImages = () => {
   };
   return (
     <div className="pupdate_images">
-      <h1>Upload Image to Cloudinary in React</h1>
+      <h1>Upload Image</h1>
       <input
         type="file"
         name="file"

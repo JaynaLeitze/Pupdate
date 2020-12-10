@@ -3,21 +3,20 @@ import { useForm } from "react-hook-form";
 import { PetContext } from "./PetProvider";
 
 export const PetForm = (props) => {
-  const { addPet, getPets } = useContext(PetContext);
+  const { addPet } = useContext(PetContext);
   const { register, handleSubmit, watch, errors } = useForm();
-  const { pet, setPet } = useState({});
   const onSubmit = (data) => {
+    data.parentId = parseInt(localStorage.getItem("pet_parent"));
     addPet(data);
   };
-
   return (
     <form className="petForm" onSubmit={handleSubmit(onSubmit)}>
       <label>Pet Name:</label>
       <input name="petName" ref={register} placeholder="Name" />
       <label>Gender:</label>
       <select name="gender" ref={register}>
-        <option value="female">female</option>
-        <option value="male">male</option>
+        <option value="true">Female</option>
+        <option value="false">Male</option>
       </select>
       <label>Breed:</label>
       <input name="petBreed" ref={register} placeholder="Breed" />
