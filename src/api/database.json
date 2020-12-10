@@ -9,14 +9,26 @@
   ],
   "pets": [
     {
-      "petName": "Champion",
-      "gender": "male",
-      "petBreed": "Pitt",
-      "petAge": "3",
+      "petName": "Tonks",
+      "gender": "true",
+      "petBreed": "pit mix",
+      "petAge": "2",
       "petWeight": "60",
       "petConditions": "",
       "petMeds": "",
-      "id": 3
+      "parentId": 1,
+      "id": 7
+    },
+    {
+      "petName": "Tonks",
+      "gender": "true",
+      "petBreed": "pit mix",
+      "petAge": "2",
+      "petWeight": "60",
+      "petConditions": "",
+      "petMeds": "",
+      "parentId": 1,
+      "id": 8
     }
   ],
   "vets": [],

@@ -16,6 +16,7 @@ export const PetDetails = (props) => {
       <h3 className="petName">{pet.name}</h3>
       <div className="petBreed">{pet.breed}</div>
       <div className="petAge">{pet.Age}</div>
+      <div className="petGender">{pet.gender === true ? "Male" : "Female"}</div>
     </section>
   );
 };
