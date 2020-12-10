@@ -29,7 +29,12 @@ export const PetForm = (props) => {
       <label>Medications:</label>
       <input name="petMeds" ref={register} placeholder="Medications" />
 
-      <input type="submit" />
+      <input
+        type="submit"
+        onClick={() => {
+          props.history.push("/pets");
+        }}
+      />
     </form>
   );
 };
