@@ -5,6 +5,12 @@
       "password": "pawnee",
       "name": "Leslie Knope",
       "id": 1
+    },
+    {
+      "email": "april@pawnee.gov",
+      "password": "12345",
+      "name": "April Ludgate Dwyer",
+      "id": 2
     }
   ],
   "pets": [
@@ -17,18 +23,62 @@
       "petConditions": "",
       "petMeds": "",
       "parentId": 1,
-      "id": 7
+      "id": 8
     },
     {
-      "petName": "Tonks",
-      "gender": "true",
-      "petBreed": "pit mix",
-      "petAge": "2",
+      "petName": "Champion",
+      "gender": "false",
+      "petBreed": "Pitt",
+      "petAge": "3",
       "petWeight": "60",
       "petConditions": "",
       "petMeds": "",
-      "parentId": 1,
-      "id": 8
+      "parentId": 2,
+      "id": 9
+    },
+    {
+      "petName": "Champion",
+      "gender": "false",
+      "petBreed": "Pitt",
+      "petAge": "3",
+      "petWeight": "60",
+      "petConditions": "",
+      "petMeds": "",
+      "parentId": 2,
+      "id": 10
+    },
+    {
+      "petName": "Andy",
+      "gender": "false",
+      "petBreed": "human",
+      "petAge": "32",
+      "petWeight": "200",
+      "petConditions": "",
+      "petMeds": "",
+      "parentId": 2,
+      "id": 11
+    },
+    {
+      "petName": "",
+      "gender": "true",
+      "petBreed": "",
+      "petAge": "",
+      "petWeight": "",
+      "petConditions": "",
+      "petMeds": "",
+      "parentId": 2,
+      "id": 12
+    },
+    {
+      "petName": "Champion",
+      "gender": "false",
+      "petBreed": "Pitt",
+      "petAge": "3",
+      "petWeight": "",
+      "petConditions": "",
+      "petMeds": "",
+      "parentId": 2,
+      "id": 13
     }
   ],
   "vets": [],
