@@ -18,11 +18,10 @@ export const ApplicationViews = (props) => {
             path="/pets/create"
             render={(props) => <PetForm {...props} />}
           />
-          {/* <Route
-            exact
+          <Route
             path="/pets/:parentId(\d+)"
             render={(props) => <PetDetails {...props} />}
-          /> */}
+          />
         </PetProvider>
       </PetParentProvider>
     </>

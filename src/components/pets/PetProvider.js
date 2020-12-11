@@ -25,7 +25,7 @@ export const PetProvider = (props) => {
 
   const getPetById = (id) => {
     return fetch(
-      `http://localhost:8088/pets/${id}?_expand=location&_expand=parents`
+      `http://localhost:8088/pets/${id}?_expand=parent`
     ).then((res) => res.json());
   };
 

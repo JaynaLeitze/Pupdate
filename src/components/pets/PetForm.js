@@ -63,6 +63,7 @@ export const PetForm = (props) => {
           onChange={uploadImage}
         />
       </div>
+      <img src={image} alt="" className="img-uploaded" size="10" />
       <form className="petForm" onSubmit={handleSubmit(onSubmit)}>
         <label>Pet Name:</label>
         <input name="petName" ref={register} placeholder="Name" />

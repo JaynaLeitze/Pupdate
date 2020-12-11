@@ -17,75 +17,6 @@
     {
       "petName": "Tonks",
       "gender": "true",
-      "petBreed": "pit mix",
-      "petAge": "2",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 1,
-      "id": 8
-    },
-    {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "Pitt",
-      "petAge": "3",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 9
-    },
-    {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "Pitt",
-      "petAge": "3",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 10
-    },
-    {
-      "petName": "Andy",
-      "gender": "false",
-      "petBreed": "human",
-      "petAge": "32",
-      "petWeight": "200",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 11
-    },
-    {
-      "petName": "",
-      "gender": "true",
-      "petBreed": "",
-      "petAge": "",
-      "petWeight": "",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 12
-    },
-    {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "Pitt",
-      "petAge": "3",
-      "petWeight": "",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 13
-    },
-    {
-      "petImage": {
-        "0": {}
-      },
-      "petName": "Tonks",
-      "gender": "true",
       "petBreed": "Pitt",
       "petAge": "2",
       "petWeight": "60",
@@ -96,9 +27,6 @@
       "id": 14
     },
     {
-      "petImage": {
-        "0": {}
-      },
       "petName": "Champion",
       "gender": "false",
       "petBreed": "pony",
