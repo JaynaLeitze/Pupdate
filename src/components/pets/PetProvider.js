@@ -29,6 +29,8 @@ export const PetProvider = (props) => {
     ).then((res) => res.json());
   };
 
+  //return context allows child components access
+
   return (
     <PetContext.Provider
       value={{

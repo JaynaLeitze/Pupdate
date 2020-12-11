@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
-export const PupdateImages = () => {
+export const ImageContext = React.createContext;
+
+export const PupdateImages = (props) => {
   const [image, setImage] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   const uploadImage = async (e) => {
@@ -23,22 +26,33 @@ export const PupdateImages = () => {
 
     setImage(file.secure_url);
     setLoading(false);
-  };
-  return (
-    <div className="pupdate_images">
-      <h1>Upload Image</h1>
-      <input
-        type="file"
-        name="file"
-        placeholder="Upload an Image"
-        onChange={uploadImage}
-      />
+    return (
+      <div className="pupdate_images">
+        <h1>Upload Image</h1>
+        <input
+          type="file"
+          name="file"
+          placeholder="Upload an Image"
+          onChange={uploadImage}
+        />
 
-      {loading ? (
-        <h3>Loading...</h3>
-      ) : (
-        <img src={image} style={{ width: "300px" }} />
-      )}
-    </div>
+        {loading ? (
+          <h3>Loading...</h3>
+        ) : (
+          <img src={image} style={{ width: "300px" }} />
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <ImageContext.Provider
+      value={{
+        image,
+        uploadImage,
+      }}
+    >
+      {props.children}
+    </ImageContext.Provider>
   );
 };
