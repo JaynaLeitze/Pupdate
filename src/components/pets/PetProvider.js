@@ -24,9 +24,7 @@ export const PetProvider = (props) => {
   };
 
   const getPetById = (id) => {
-    return fetch(
-      `http://localhost:8088/pets/${id}?_expand=parent`
-    ).then((res) => res.json());
+    return fetch(`http://localhost:8088/pets/${id}`).then((res) => res.json());
   };
 
   //return context allows child components access

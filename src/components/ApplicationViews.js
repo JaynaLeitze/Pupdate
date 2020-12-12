@@ -19,7 +19,7 @@ export const ApplicationViews = (props) => {
             render={(props) => <PetForm {...props} />}
           />
           <Route
-            path="/pets/:parentId(\d+)"
+            path="/pets/:petId(\d+)"
             render={(props) => <PetDetails {...props} />}
           />
         </PetProvider>
