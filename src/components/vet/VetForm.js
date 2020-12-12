@@ -6,6 +6,7 @@ export const VetForm = () => {
     const {addVet} = useContext(VetContext)
     const {register, handleSubmit} = useForm()
     const onSubmit = (data) => {
+        data.vetId = parseInt
         addVet(data)
     }
     return (

@@ -21,8 +21,12 @@ export const VetProvider = () => {
     }).then(getVet);
   };
 
+  const getVetById = (id) => {
+    return fetch(`http://localhost:8088/vet/${id}`).then((res) => res.json());
+  };
+
   return (
-    <VetContext.Provider value={{ vet, getVet, addVet }}>
+    <VetContext.Provider value={{ vet, getVet, addVet, getVetById }}>
       {props.children}
     </VetContext.Provider>
   );
