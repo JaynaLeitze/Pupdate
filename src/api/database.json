@@ -17,71 +17,29 @@
     {
       "petName": "Tonks",
       "gender": "true",
-      "petBreed": "pit mix",
+      "petBreed": "Pitt",
       "petAge": "2",
       "petWeight": "60",
       "petConditions": "",
       "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1607709032/pupdate/kflhhdzs8me1yq3jljgy.heic",
       "parentId": 1,
-      "id": 8
+      "id": 14
     },
     {
       "petName": "Champion",
       "gender": "false",
-      "petBreed": "Pitt",
+      "petBreed": "pony",
       "petAge": "3",
       "petWeight": "60",
-      "petConditions": "",
+      "petConditions": "allergies",
       "petMeds": "",
-      "parentId": 2,
-      "id": 9
-    },
-    {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "Pitt",
-      "petAge": "3",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 10
-    },
-    {
-      "petName": "Andy",
-      "gender": "false",
-      "petBreed": "human",
-      "petAge": "32",
-      "petWeight": "200",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 11
-    },
-    {
-      "petName": "",
-      "gender": "true",
-      "petBreed": "",
-      "petAge": "",
-      "petWeight": "",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 12
-    },
-    {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "Pitt",
-      "petAge": "3",
-      "petWeight": "",
-      "petConditions": "",
-      "petMeds": "",
-      "parentId": 2,
-      "id": 13
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
+      "parentId": 1,
+      "id": 15
     }
   ],
-  "vets": [],
+  "vet": [],
   "records": [],
   "symptoms": []
 }
