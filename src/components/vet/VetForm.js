@@ -15,15 +15,15 @@ export const VetForm = () => {
             <label>Vet Name:</label>
             <input type="text" name="vetName" ref={register} />
             <label>Vet Address:</label>
-            <textarea type="text" name="addressLine1" ref={register}/>
+            <input type="text" name="addressLine1" ref={register}/>
             <input type="text" name="addressLine2" ref={register}/>
             <input type="text" name="city" ref={register}/>
             <input type="text" name="state" ref={register}/>
             <input type="text" name="zip" ref={register}/>
             <label>Vet Phone Number:</label>
-            <input type="text" ref={register}/>
+            <input type="text" name="phone" ref={register}/>
             <label>Vet Email:</label>
-            <input type="text" ref={register}/>
+            <input type="text" name="email" ref={register}/>
             <label>Website:</label>
             <input type="text" name="website" ref={register}/>
 

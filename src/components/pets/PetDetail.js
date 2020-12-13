@@ -20,11 +20,16 @@ export const PetDetails = (props) => {
     <section className="pet">
       <img width="300px" src={pet.image} />
       <h3 className="petName">{pet.petName}</h3>
-      <div className="petBreed">{pet.petBreed}</div>
-      <div className="petAge">{pet.petAge}</div>
-      <div className="petGender">{pet.gender}</div>
-      <div className="petWeight">{pet.petWeight}</div>
-      <div className="petConditions"></div>
+      <div className="petBreed">Breed: {pet.petBreed}</div>
+      <div className="petAge">Age:{pet.petAge}</div>
+      <div className="petGender">
+        Gender:{pet.gender === true ? Male : Female}
+      </div>
+      <div className="petWeight">Weight:{pet.petWeight}</div>
+      <div className="petConditions">
+        Chronic Conditions:{pet.petConditions}
+      </div>
+      <div className="petMedications">Medications: </div>
     </section>
   );
 };
