@@ -39,7 +39,69 @@
       "id": 15
     }
   ],
-  "vet": [],
-  "records": [],
+  "vets": [
+    {
+      "id": 1,
+      "vetName": "Michael Scott",
+      "addressLine1": "",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "PA",
+      "zip": "55444",
+      "phone": "3456789",
+      "email": "michael@dunder.com",
+      "website": "dundermifflin.com"
+    },
+    {
+      "id": 2,
+      "vetName": "Pam",
+      "addressLine1": "",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "PA",
+      "zip": "55444",
+      "phone": "3456789",
+      "email": "michael@dunder.com",
+      "website": "dundermifflin.com"
+    }
+  ],
+  "records": [
+    {
+      "id": 1,
+      "petId": 15,
+      "vetId": 1,
+      "vaccinations": "rabies",
+      "vetDate": "12/4/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    },
+    {
+      "id": 2,
+      "petId": 14,
+      "vetId": 2,
+      "vaccinations": "rabies",
+      "vetDate": "12/12/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    },
+    {
+      "id": 3,
+      "petId": 15,
+      "vetId": 1,
+      "vaccinations": "rabies",
+      "vetDate": "10/13/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    },
+    {
+      "id": 4,
+      "petId": 15,
+      "vetId": 1,
+      "vaccinations": "rabies",
+      "vetDate": "05/15/2019",
+      "visitReason": "check up",
+      "treatment": "none"
+    }
+  ],
   "symptoms": []
 }
