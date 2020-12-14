@@ -6,13 +6,13 @@ export const VetProvider = (props) => {
   const [vet, setVet] = useState([]);
 
   const getVet = () => {
-    return fetch("https://localhost:8088/vet")
+    return fetch("http://localhost:8088/vets")
       .then((res) => res.json())
       .then(setVet);
   };
 
   const addVet = (vet) => {
-    return fetch("https://localhost:8088/vets/create", {
+    return fetch("http://localhost:8088/vets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const VetProvider = (props) => {
   };
 
   const getVetById = (id) => {
-    return fetch(`http://localhost:8088/vet/${id}`).then((res) => res.json());
+    return fetch(`http://localhost:8088/vets/${id}`).then((res) => res.json());
   };
 
   return (

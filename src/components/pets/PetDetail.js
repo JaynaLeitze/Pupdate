@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
 import { Link } from "react-router-dom";
+import { VetContext } from "../vet/VetProvider";
 
-export const PetDetails = (props, { history }) => {
+export const PetDetails = (props) => {
   const {
     pets,
     addPets,
@@ -12,11 +13,10 @@ export const PetDetails = (props, { history }) => {
     getRecordByPetId,
     vetRecords,
   } = useContext(PetContext);
+  const vets = useContext(VetContext);
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
   const [vet, setVet] = useState({});
-
-  console.log(pet);
 
   useEffect(() => {
     getPets().then(() => getRecordByPetId(petId));
@@ -32,7 +32,7 @@ export const PetDetails = (props, { history }) => {
   }, [pets]);
 
   useEffect(() => {
-    const thisVet = vetRecords.find((vet) => vet.vetId === vet.vet.id);
+    const thisVet = vetRecords.find((vet) => vet.vetId === vet.vet.id) || {};
     setVet(thisVet);
   }, [vetRecords]);
 
@@ -57,6 +57,11 @@ export const PetDetails = (props, { history }) => {
       </section>
       <section className="medRecords">
         <h3>Medical Records</h3>
+        {/* {vetRecords.map((record) => {
+          return (
+            (<div>{record.vetDate}</div>), (<div>{record.visitReason}</div>)
+          );
+        })} */}
       </section>
       <section className="vetInfo">
         <h3>Veterinarian</h3>

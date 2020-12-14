@@ -41,34 +41,31 @@
   ],
   "vets": [
     {
-      "id": 1,
-      "vetName": "Michael Scott",
-      "addressLine1": "",
+      "vetName": "Jim Halpert",
+      "addressLine1": "1 Dunder Ln",
       "addressLine2": "",
       "city": "Scranton",
       "state": "PA",
-      "zip": "55444",
-      "phone": "3456789",
-      "email": "michael@dunder.com",
-      "website": "dundermifflin.com"
-    },
-    {
-      "id": 2,
-      "vetName": "Pam",
-      "addressLine1": "",
-      "addressLine2": "",
-      "city": "Scranton",
-      "state": "PA",
-      "zip": "55444",
-      "phone": "3456789",
-      "email": "michael@dunder.com",
-      "website": "dundermifflin.com"
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "jim@dundermifflinvets.com",
+      "website": "",
+      "id": 2
     }
   ],
   "records": [
     {
-      "id": 2,
+      "id": 1,
       "petId": 14,
+      "vetId": 2,
+      "vaccinations": "rabies",
+      "vetDate": "12/12/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    },
+    {
+      "id": 2,
+      "petId": 15,
       "vetId": 2,
       "vaccinations": "rabies",
       "vetDate": "12/12/2020",
