@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
+import { Link } from "react-router-dom";
 
-export const PetDetails = (props) => {
+export const PetDetails = (props, { history }) => {
   const {
     pets,
     addPets,
@@ -13,17 +14,28 @@ export const PetDetails = (props) => {
   } = useContext(PetContext);
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
+  const [vet, setVet] = useState({});
+
+  console.log(pet);
 
   useEffect(() => {
-    // getPetById(petId).then(setPet);
     getPets().then(() => getRecordByPetId(petId));
   }, []);
+
+  console.log("Here are the vet records", vetRecords);
+  // console.log(vetId);
+
   useEffect(() => {
     console.log(props);
     const thisPet = pets.find((pet) => pet.id === petId) || {};
     setPet(thisPet);
   }, [pets]);
-  console.log(vetRecords);
+
+  useEffect(() => {
+    const thisVet = vetRecords.find((vet) => vet.vetId === vet.vet.id);
+    setVet(thisVet);
+  }, [vetRecords]);
+
   return (
     <article className="petDashboard">
       <section className="petCard">
@@ -48,6 +60,25 @@ export const PetDetails = (props) => {
       </section>
       <section className="vetInfo">
         <h3>Veterinarian</h3>
+        {vetRecords.length > 0 ? (
+          ((<div>{vet.vet.vetName}</div>),
+          ((
+            <address>
+              {vet.vet.addressLine1}
+              <br />,{vet.vet.addressLine2}
+              <br />,{(vet.vet.city, vet.vet.state, vet.vet.zip)}
+            </address>
+          ),
+          (<div>{vet.vet.phone}</div>),
+          (<div>{vet.vet.email}</div>),
+          (<div>{vet.vet.website}</div>)))
+        ) : (
+          <div>
+            <Link to={"/vets/create"}>
+              <button>Add Veterinarian</button>
+            </Link>
+          </div>
+        )}
       </section>
     </article>
   );

@@ -5,6 +5,8 @@ import { PetForm } from "./pets/PetForm";
 import { PetProvider } from "./pets/PetProvider";
 import { PetList } from "./pets/PetList";
 import { PetDetails } from "./pets/PetDetail";
+import { VetForm } from "./vet/VetForm";
+import { VetProvider } from "./vet/VetProvider";
 
 export const ApplicationViews = (props) => {
   return (
@@ -24,6 +26,16 @@ export const ApplicationViews = (props) => {
           />
         </PetProvider>
       </PetParentProvider>
+
+      <VetProvider>
+        <PetProvider>
+          <Route
+            exact
+            path="/vets/create"
+            render={(props) => <VetForm {...props} />}
+          />
+        </PetProvider>
+      </VetProvider>
     </>
   );
 };

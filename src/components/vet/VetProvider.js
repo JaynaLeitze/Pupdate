@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export const VetContext = React.createContext();
 
-export const VetProvider = () => {
+export const VetProvider = (props) => {
   const [vet, setVet] = useState([]);
 
   const getVet = () => {
@@ -12,7 +12,7 @@ export const VetProvider = () => {
   };
 
   const addVet = (vet) => {
-    return fetch("https://localhost:8088/vet/create", {
+    return fetch("https://localhost:8088/vets/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
