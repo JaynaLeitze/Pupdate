@@ -31,7 +31,6 @@ export const PetDetails = (props) => {
   }, [vetRecords]);
 
   console.log(vetRecords);
-
   return (
     <article className="petDashboard">
       <section className="petCard">
@@ -71,17 +70,11 @@ export const PetDetails = (props) => {
 
         {vetRecords.length > 0 ? (
           <>
-            <div>{vet.vetName}</div>
-            <address>
-              {vet.addressLine1}
-              <br />
-              {vet.addressLine2}
-              <br />
-              {(vet.city, vet.state, vet.zip)}
-            </address>
-            <div>{vet.phone}</div>
-            <div>{vet.email}</div>
-            <div>{vet.website}</div>
+            <div>{vet.vet.vetName}</div>
+            <div>{vet.vet.addressLine1}</div>
+            <div>{vet.vet.addressLine2}</div>
+            <div>{vet.vet.phone}</div>
+            <div>{vet.vet.email}</div>
           </>
         ) : (
           <>
