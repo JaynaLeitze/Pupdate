@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 export const VetContext = React.createContext();
 
 export const VetProvider = (props) => {
-  const [vet, setVet] = useState([]);
+  const [vets, setVet] = useState([]);
 
-  const getVet = () => {
+  const getVets = () => {
     return fetch("http://localhost:8088/vets")
       .then((res) => res.json())
       .then(setVet);
@@ -18,7 +18,7 @@ export const VetProvider = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(vet),
-    }).then(getVet);
+    }).then(getVets);
   };
 
   const getVetById = (id) => {
@@ -26,7 +26,7 @@ export const VetProvider = (props) => {
   };
 
   return (
-    <VetContext.Provider value={{ vet, getVet, addVet, getVetById }}>
+    <VetContext.Provider value={{ vets, getVets, addVet, getVetById }}>
       {props.children}
     </VetContext.Provider>
   );

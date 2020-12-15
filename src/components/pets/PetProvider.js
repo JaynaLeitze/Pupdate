@@ -7,7 +7,6 @@ export const PetContext = React.createContext();
 export const PetProvider = (props) => {
   const [pets, setPets] = useState([]);
   const [vetRecords, setVetRecords] = useState([]);
-
   const getPets = () => {
     return fetch("http://localhost:8088/pets")
       .then((res) => res.json())

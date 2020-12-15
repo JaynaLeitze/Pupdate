@@ -2,18 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
 import { Link } from "react-router-dom";
-import { VetContext } from "../vet/VetProvider";
 
 export const PetDetails = (props) => {
   const {
     pets,
-    addPets,
     getPets,
     getPetById,
     getRecordByPetId,
     vetRecords,
   } = useContext(PetContext);
-  const vets = useContext(VetContext);
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
   const [vet, setVet] = useState({});
@@ -21,9 +18,6 @@ export const PetDetails = (props) => {
   useEffect(() => {
     getPets().then(() => getRecordByPetId(petId));
   }, []);
-
-  console.log("Here are the vet records", vetRecords);
-  // console.log(vetId);
 
   useEffect(() => {
     console.log(props);
@@ -35,6 +29,8 @@ export const PetDetails = (props) => {
     const thisVet = vetRecords.find((vet) => vet.vetId === vet.vet.id) || {};
     setVet(thisVet);
   }, [vetRecords]);
+
+  console.log(vetRecords);
 
   return (
     <article className="petDashboard">
@@ -57,32 +53,44 @@ export const PetDetails = (props) => {
       </section>
       <section className="medRecords">
         <h3>Medical Records</h3>
-        {/* {vetRecords.map((record) => {
-          return (
-            (<div>{record.vetDate}</div>), (<div>{record.visitReason}</div>)
-          );
-        })} */}
+        <div className="recordCard">
+          {vetRecords.map((record) => {
+            return (
+              <>
+                <div>{record.vetDate}</div>
+                <div>{record.visitReason}</div>
+                <div>{record.treatment}</div>
+                <div>{record.vaccinations}</div>
+              </>
+            );
+          })}
+        </div>
       </section>
       <section className="vetInfo">
         <h3>Veterinarian</h3>
+
         {vetRecords.length > 0 ? (
-          ((<div>{vet.vet.vetName}</div>),
-          ((
+          <>
+            <div>{vet.vetName}</div>
             <address>
-              {vet.vet.addressLine1}
-              <br />,{vet.vet.addressLine2}
-              <br />,{(vet.vet.city, vet.vet.state, vet.vet.zip)}
+              {vet.addressLine1}
+              <br />
+              {vet.addressLine2}
+              <br />
+              {(vet.city, vet.state, vet.zip)}
             </address>
-          ),
-          (<div>{vet.vet.phone}</div>),
-          (<div>{vet.vet.email}</div>),
-          (<div>{vet.vet.website}</div>)))
+            <div>{vet.phone}</div>
+            <div>{vet.email}</div>
+            <div>{vet.website}</div>
+          </>
         ) : (
-          <div>
-            <Link to={"/vets/create"}>
-              <button>Add Veterinarian</button>
-            </Link>
-          </div>
+          <>
+            <div>
+              <Link to={"/vets/create"}>
+                <button>Add Veterinarian</button>
+              </Link>
+            </div>
+          </>
         )}
       </section>
     </article>
