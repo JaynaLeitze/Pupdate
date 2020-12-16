@@ -2,31 +2,31 @@ import React, { useState, useEffect } from "react";
 
 export const VetContext = React.createContext();
 
-export const VetProvider = () => {
-  const [vet, setVet] = useState([]);
+export const VetProvider = (props) => {
+  const [vets, setVet] = useState([]);
 
-  const getVet = () => {
-    return fetch("https://localhost:8088/vet")
+  const getVets = () => {
+    return fetch("http://localhost:8088/vets")
       .then((res) => res.json())
       .then(setVet);
   };
 
   const addVet = (vet) => {
-    return fetch("https://localhost:8088/vet/create", {
+    return fetch("http://localhost:8088/vets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(vet),
-    }).then(getVet);
+    }).then(getVets);
   };
 
   const getVetById = (id) => {
-    return fetch(`http://localhost:8088/vet/${id}`).then((res) => res.json());
+    return fetch(`http://localhost:8088/vets/${id}`).then((res) => res.json());
   };
 
   return (
-    <VetContext.Provider value={{ vet, getVet, addVet, getVetById }}>
+    <VetContext.Provider value={{ vets, getVets, addVet, getVetById }}>
       {props.children}
     </VetContext.Provider>
   );

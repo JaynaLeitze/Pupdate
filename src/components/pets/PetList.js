@@ -10,7 +10,7 @@ export const PetList = ({ history }) => {
   useEffect(() => {
     getPets();
   }, []);
-
+  console.log(pets);
   return (
     <>
       <h1>Your Pets</h1>

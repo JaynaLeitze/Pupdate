@@ -6,7 +6,7 @@ export const PetContext = React.createContext();
 
 export const PetProvider = (props) => {
   const [pets, setPets] = useState([]);
-
+  const [vetRecords, setVetRecords] = useState([]);
   const getPets = () => {
     return fetch("http://localhost:8088/pets")
       .then((res) => res.json())
@@ -26,6 +26,11 @@ export const PetProvider = (props) => {
   const getPetById = (id) => {
     return fetch(`http://localhost:8088/pets/${id}`).then((res) => res.json());
   };
+  const getRecordByPetId = (petId) => {
+    return fetch(`http://localhost:8088/records?_expand=vet&petId=${petId}`)
+      .then((res) => res.json())
+      .then(setVetRecords);
+  };
 
   //return context allows child components access
 
@@ -36,6 +41,8 @@ export const PetProvider = (props) => {
         addPet,
         getPets,
         getPetById,
+        getRecordByPetId,
+        vetRecords,
       }}
     >
       {props.children}

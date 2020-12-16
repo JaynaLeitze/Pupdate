@@ -39,7 +39,39 @@
       "id": 15
     }
   ],
-  "vet": [],
-  "records": [],
+  "vets": [
+    {
+      "vetName": "Jim Halpert",
+      "addressLine1": "1 Dunder Ln",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "PA",
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "jim@dundermifflinvets.com",
+      "website": "www.dundermifflinvets.com",
+      "id": 2
+    }
+  ],
+  "records": [
+    {
+      "id": 1,
+      "petId": 14,
+      "vetId": 2,
+      "vaccinations": "rabies",
+      "vetDate": "12/12/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    },
+    {
+      "id": 2,
+      "petId": 15,
+      "vetId": 2,
+      "vaccinations": "rabies",
+      "vetDate": "12/12/2020",
+      "visitReason": "check up",
+      "treatment": "none"
+    }
+  ],
   "symptoms": []
 }
