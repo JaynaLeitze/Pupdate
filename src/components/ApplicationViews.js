@@ -9,6 +9,8 @@ import { VetForm } from "./vet/VetForm";
 import { VetProvider } from "./vet/VetProvider";
 import { RecordForm } from "./records/MedRecordForm";
 import { RecordProvider } from "./records/MedRecordsProvider";
+import { SymptomProvider } from "./symptoms/SymptomProvider";
+import { SymptomForm } from "./symptoms/SymptomForm";
 
 export const ApplicationViews = (props) => {
   return (
@@ -17,31 +19,37 @@ export const ApplicationViews = (props) => {
         <PetProvider>
           <VetProvider>
             <RecordProvider>
-              <Route
-                exact
-                path="/"
-                render={(props) => <PetList {...props} />}
-              />
-
-              <Route
-                exact
-                path="/pets/create"
-                render={(props) => <PetForm {...props} />}
-              />
-              <Route
-                path="/pets/:petId(\d+)"
-                render={(props) => <PetDetails {...props} />}
-              />
-              <Route
-                exact
-                path="/vets/create"
-                render={(props) => <VetForm {...props} />}
-              />
-              <Route
-                exact
-                path="/records/create/:petId(\d+)"
-                render={(props) => <RecordForm {...props} />}
-              />
+              <SymptomProvider>
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => <PetList {...props} />}
+                />
+                <Route
+                  exact
+                  path="/pets/create"
+                  render={(props) => <PetForm {...props} />}
+                />
+                <Route
+                  path="/pets/:petId(\d+)"
+                  render={(props) => <PetDetails {...props} />}
+                />
+                <Route
+                  exact
+                  path="/vets/create"
+                  render={(props) => <VetForm {...props} />}
+                />
+                <Route
+                  exact
+                  path="/records/create/:petId(\d+)"
+                  render={(props) => <RecordForm {...props} />}
+                />
+                <Route
+                  exact
+                  path="/symptoms/create/:petId(\d+)"
+                  render={(props) => <SymptomForm {...props} />}
+                />
+              </SymptomProvider>
             </RecordProvider>
           </VetProvider>
         </PetProvider>
