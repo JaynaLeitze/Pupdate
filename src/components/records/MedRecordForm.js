@@ -15,8 +15,9 @@ export const RecordForm = (props) => {
   // const vetId = vets.find((v) => v.id === vetId);
   // const vetId = parseInt(props.match.params.vetId);
 
-  const petId = parseInt(props.match.petId);
+  const petId = parseInt(props.match.params.petId);
   console.log(petId);
+  console.log(props);
 
   const onSubmit = (data) => {
     console.log(props);

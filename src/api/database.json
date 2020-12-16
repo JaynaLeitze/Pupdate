@@ -95,6 +95,14 @@
       "vaccinations": "none",
       "petId": null,
       "id": 10
+    },
+    {
+      "date": "",
+      "reason": "",
+      "treatment": "",
+      "vaccinations": "",
+      "petId": null,
+      "id": 11
     }
   ],
   "symptoms": []
