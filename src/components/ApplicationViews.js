@@ -7,6 +7,8 @@ import { PetList } from "./pets/PetList";
 import { PetDetails } from "./pets/PetDetail";
 import { VetForm } from "./vet/VetForm";
 import { VetProvider } from "./vet/VetProvider";
+import { SymptomProvider } from "./symptoms/SymptomProvider";
+import { SymptomForm } from "./symptoms/SymptomForm";
 
 export const ApplicationViews = (props) => {
   return (
@@ -14,30 +16,36 @@ export const ApplicationViews = (props) => {
       <PetParentProvider>
         <PetProvider>
           <VetProvider>
-            <Route exact path="/" render={(props) => <PetList {...props} />} />
+            <SymptomProvider>
+              <Route
+                exact
+                path="/"
+                render={(props) => <PetList {...props} />}
+              />
 
-            <Route
-              exact
-              path="/pets/create"
-              render={(props) => <PetForm {...props} />}
-            />
-            <Route
-              path="/pets/:petId(\d+)"
-              render={(props) => <PetDetails {...props} />}
-            />
+              <Route
+                exact
+                path="/pets/create"
+                render={(props) => <PetForm {...props} />}
+              />
+              <Route
+                path="/pets/:petId(\d+)"
+                render={(props) => <PetDetails {...props} />}
+              />
+              <Route
+                exact
+                path="/vets/create"
+                render={(props) => <VetForm {...props} />}
+              />
+              <Route
+                exact
+                path="/symptoms/create"
+                render={(props) => <SymptomForm {...props} />}
+              />
+            </SymptomProvider>
           </VetProvider>
         </PetProvider>
       </PetParentProvider>
-
-      <VetProvider>
-        <PetProvider>
-          <Route
-            exact
-            path="/vets/create"
-            render={(props) => <VetForm {...props} />}
-          />
-        </PetProvider>
-      </VetProvider>
     </>
   );
 };

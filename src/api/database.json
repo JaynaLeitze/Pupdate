@@ -73,5 +73,13 @@
       "treatment": "none"
     }
   ],
-  "symptoms": []
+  "symptoms": [
+    {
+      "date": "2020-12-08",
+      "symptom": "upset stomach",
+      "cause": "too many treats",
+      "petId": null,
+      "id": 1
+    }
+  ]
 }
