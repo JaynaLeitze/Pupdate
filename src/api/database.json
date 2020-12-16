@@ -55,54 +55,13 @@
   ],
   "records": [
     {
-      "id": 1,
-      "petId": 14,
-      "vetId": 2,
-      "vaccinations": "rabies",
-      "vetDate": "2020-10-04",
-      "visitReason": "check up",
-      "treatment": "none"
-    },
-    {
-      "id": 2,
-      "petId": 15,
-      "vetId": 2,
-      "vaccinations": "rabies",
-      "vetDate": "2020-12-12",
-      "visitReason": "check up",
-      "treatment": "none"
-    },
-    {
-      "date": "2020-12-16",
-      "reason": "allergies",
-      "treatment": "benadryl",
-      "vaccinations": "none",
-      "petId": null,
-      "id": 8
-    },
-    {
-      "date": "2020-12-16",
-      "reason": "allergies",
-      "treatment": "benadryl",
-      "vaccinations": "none",
-      "petId": null,
-      "id": 9
-    },
-    {
-      "date": "2020-12-01",
-      "reason": "allergies",
-      "treatment": "benadryl",
-      "vaccinations": "none",
-      "petId": null,
-      "id": 10
-    },
-    {
       "date": "",
       "reason": "",
       "treatment": "",
       "vaccinations": "",
-      "petId": null,
-      "id": 11
+      "petId": 15,
+      "vetId": 2,
+      "id": 13
     }
   ],
   "symptoms": []

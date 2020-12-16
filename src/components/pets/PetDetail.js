@@ -69,7 +69,7 @@ export const PetDetails = (props) => {
           })}
         </div>
         <div>
-          <Link to={"/records/create"}>
+          <Link to={`/records/create/${pet.id}`}>
             <button>Add Vet Record</button>
           </Link>
         </div>

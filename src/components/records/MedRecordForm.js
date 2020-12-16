@@ -23,7 +23,7 @@ export const RecordForm = (props) => {
     console.log(props);
     // data.vetId = vetId;
     data.petId = petId;
-    addRecord(data).then(props.history.push("/"));
+    addRecord(data).then(props.history.push(`/pets/${petId}`));
   };
   useEffect(() => {
     getPets().then(getVets);

@@ -39,7 +39,7 @@ export const ApplicationViews = (props) => {
               />
               <Route
                 exact
-                path="/records/create"
+                path="/records/create/:petId(\d+)"
                 render={(props) => <RecordForm {...props} />}
               />
             </RecordProvider>
