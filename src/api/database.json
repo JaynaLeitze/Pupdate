@@ -75,10 +75,10 @@
   ],
   "symptoms": [
     {
-      "date": "2020-12-08",
+      "date": "2020-12-17",
       "symptom": "upset stomach",
       "cause": "too many treats",
-      "petId": null,
+      "petId": 15,
       "id": 1
     }
   ]

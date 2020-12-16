@@ -55,7 +55,7 @@ export const PetDetails = (props) => {
       <section className="symptoms">
         <h3>Symptoms</h3>
         <div>
-          <Link to={"/symptoms/create"}>
+          <Link to={`/symptoms/create/${pet.id}`}>
             <button>Add Symptom</button>
           </Link>
         </div>

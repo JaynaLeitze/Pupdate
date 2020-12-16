@@ -7,9 +7,9 @@ export const SymptomForm = (props) => {
   const { symptoms, addSymptom } = useContext(SymptomContext);
   const { register, handleSubmit } = useForm();
   console.log(props);
-
+  const petId = parseInt(props.match.params.petId);
   const onSubmit = (data) => {
-    data.petId = parseInt(props.match.params.petId);
+    data.petId = petId;
     addSymptom(data).then(props.history.push(`/pets/${petId}`));
   };
 
