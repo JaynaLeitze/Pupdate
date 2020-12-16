@@ -21,12 +21,18 @@ export const SymptomProvider = (props) => {
     }).then(getSymptoms);
   };
 
+  const removeSymptom = (symptomId) => {
+    return fetch(`http://localhost:8088/employees/${symptomId}`, {
+      method: "DELETE",
+    }).then(getSymptoms);
+  };
   return (
     <SymptomContext.Provider
       value={{
         symptoms,
         getSymptoms,
         addSymptom,
+        removeSymptom,
       }}
     >
       {props.children}
