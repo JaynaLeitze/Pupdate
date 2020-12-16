@@ -22,7 +22,7 @@ export const SymptomProvider = (props) => {
   };
 
   const removeSymptom = (symptomId) => {
-    return fetch(`http://localhost:8088/employees/${symptomId}`, {
+    return fetch(`http://localhost:8088/symptoms/${symptomId}`, {
       method: "DELETE",
     }).then(getSymptoms);
   };

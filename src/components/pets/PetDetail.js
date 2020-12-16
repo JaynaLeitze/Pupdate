@@ -3,6 +3,7 @@ import { PetContext } from "./PetProvider";
 import "./Pet.css";
 import { Link } from "react-router-dom";
 import { VetContext } from "../vet/VetProvider";
+import { SymptomContext } from "../symptoms/SymptomProvider";
 
 export const PetDetails = (props) => {
   const {
@@ -12,12 +13,14 @@ export const PetDetails = (props) => {
     getRecordByPetId,
     vetRecords,
   } = useContext(PetContext);
+  const { symptoms, getSymptoms, removeSymptom } = useContext(SymptomContext);
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
-  const [vet, setVet] = useState({});
 
   useEffect(() => {
-    getPets().then(() => getRecordByPetId(petId));
+    getPets()
+      .then(() => getRecordByPetId(petId))
+      .then(getSymptoms);
   }, []);
 
   useEffect(() => {
@@ -54,6 +57,27 @@ export const PetDetails = (props) => {
       </section>
       <section className="symptoms">
         <h3>Symptoms</h3>
+        <div>
+          {symptoms.map((symptom) => {
+            return (
+              <div>
+                <div>{symptom.symptom}</div>
+                <div>{symptom.date}</div>
+                <div>{symptom.cause}</div>
+
+                <button
+                  onClick={() => {
+                    removeSymptom(symptom.id).then(() => {
+                      props.history.push(`/pets/${pet.id}`);
+                    });
+                  }}
+                >
+                  Delete Symptom
+                </button>
+              </div>
+            );
+          })}
+        </div>
         <div>
           <Link to={`/symptoms/create/${pet.id}`}>
             <button>Add Symptom</button>
