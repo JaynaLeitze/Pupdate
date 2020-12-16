@@ -80,7 +80,7 @@ export const PetDetails = (props) => {
         {vetRecords.length > 0 ? (
           vetRecords.map((vet) => {
             return (
-              <>
+              <div>
                 <div>{vet.vet.vetName}</div>
                 <div>{vet.vet.addressLine1}</div>
                 <div>{vet.vet.addressLine2}</div>
@@ -90,7 +90,7 @@ export const PetDetails = (props) => {
                 <div>{vet.vet.phone}</div>
                 <div>{vet.vet.email}</div>
                 <div>{vet.vet.website}</div>
-              </>
+              </div>
             );
           })
         ) : (
