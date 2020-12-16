@@ -10,7 +10,7 @@ export const SymptomForm = (props) => {
 
   const onSubmit = (data) => {
     data.petId = parseInt(props.match.params.petId);
-    addSymptom(data);
+    addSymptom(data).then(props.history.push(`/pets/${petId}`));
   };
 
   return (

@@ -39,7 +39,7 @@ export const ApplicationViews = (props) => {
               />
               <Route
                 exact
-                path="/symptoms/create"
+                path="/symptoms/create/:petId(\d+)"
                 render={(props) => <SymptomForm {...props} />}
               />
             </SymptomProvider>
