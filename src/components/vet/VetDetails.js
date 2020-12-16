@@ -7,28 +7,36 @@ export const VetDetails = (props) => {
   const [vet, setVet] = useState([]);
 
   useEffect(() => {
-    getVetById(vetId).then(setVet);
-    getVets();
+    getPets()
+      .then(() => getRecordByPetId(petId))
+      .then(setVet);
   }, []);
 
   return (
     <section className="vetCard">
       <h3>Veterinarian</h3>
-      <div className="vetName">{vet.vetName}</div>
-      <div className="vetAddress">
-        <address>
-          {vet.addressLine1}
-          <p>
-            {vet.addressLine2}
-            <br>
-              {vet.city},{vet.state} {vet.zip}{" "}
-            </br>
-          </p>
-        </address>
-      </div>
-      <div className="vetPhone">{vet.phone}</div>
-      <div className="vetEmail">{vet.email}</div>
-      <div className="vetWebsite">{vet.website}</div>
+
+      {vetRecords.length > 0 ? (
+        <>
+          <div>{vet.vet.vetName}</div>
+          <div>{vet.vet.addressLine1}</div>
+          <div>{vet.vet.addressLine2}</div>
+          <div>
+            {vet.vet.city}, {vet.vet.state} {vet.vet.zip}
+          </div>
+          <div>{vet.vet.phone}</div>
+          <div>{vet.vet.email}</div>
+          <div>{vet.vet.website}</div>
+        </>
+      ) : (
+        <>
+          <div>
+            <Link to={"/vets/create"}>
+              <button>Add Veterinarian</button>
+            </Link>
+          </div>
+        </>
+      )}
     </section>
   );
 };

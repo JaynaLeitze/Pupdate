@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
 import { Link } from "react-router-dom";
+import { VetContext } from "../vet/VetProvider";
 
 export const PetDetails = (props) => {
   const {
@@ -25,12 +26,16 @@ export const PetDetails = (props) => {
     setPet(thisPet);
   }, [pets]);
 
-  useEffect(() => {
-    const thisVet = vetRecords.find((vet) => vet.vetId === vet.vet.id) || {};
-    setVet(thisVet);
-  }, [vetRecords]);
+  // useEffect(() => {
+  //   const thisVet = vetRecords.map((vetRecord) => {
+  //     console.log(vets);
+  //     setFoundVet(vets.find((v) => v.id === vetRecord.vetId));
+  //   });
+  //   setVet(thisVet);
+  //   console.log(thisVet);
+  // }, [vets]);
+  // console.log(foundVet);
 
-  console.log(vetRecords);
   return (
     <article className="petDashboard">
       <section className="petCard">
@@ -69,13 +74,21 @@ export const PetDetails = (props) => {
         <h3>Veterinarian</h3>
 
         {vetRecords.length > 0 ? (
-          <>
-            <div>{vet.vet.vetName}</div>
-            <div>{vet.vet.addressLine1}</div>
-            <div>{vet.vet.addressLine2}</div>
-            <div>{vet.vet.phone}</div>
-            <div>{vet.vet.email}</div>
-          </>
+          vetRecords.map((vet) => {
+            return (
+              <>
+                <div>{vet.vet.vetName}</div>
+                <div>{vet.vet.addressLine1}</div>
+                <div>{vet.vet.addressLine2}</div>
+                <div>
+                  {vet.vet.city}, {vet.vet.state} {vet.vet.zip}
+                </div>
+                <div>{vet.vet.phone}</div>
+                <div>{vet.vet.email}</div>
+                <div>{vet.vet.website}</div>
+              </>
+            );
+          })
         ) : (
           <>
             <div>
