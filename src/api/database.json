@@ -71,6 +71,13 @@
       "vetDate": "12/12/2020",
       "visitReason": "check up",
       "treatment": "none"
+    },
+    {
+      "date": "2020-12-16",
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "none",
+      "id": 3
     }
   ],
   "symptoms": []

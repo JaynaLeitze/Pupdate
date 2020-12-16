@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-export const RecordContext = React.createContext;
+export const RecordContext = React.createContext();
 
-export const RecordProvider = () => {
+export const RecordProvider = (props) => {
   const [records, setRecords] = useState([]);
 
   const getRecords = () => {
-    return fetch("localhost:8088/records")
+    return fetch("http://localhost:8088/records")
       .then((res) => res.json())
       .then(setRecords);
   };
 
   const addRecord = (record) => {
-    return fetch("localhost:8088/records/create", {
+    return fetch("http://localhost:8088/records", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

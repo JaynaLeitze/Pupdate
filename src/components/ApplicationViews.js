@@ -7,6 +7,8 @@ import { PetList } from "./pets/PetList";
 import { PetDetails } from "./pets/PetDetail";
 import { VetForm } from "./vet/VetForm";
 import { VetProvider } from "./vet/VetProvider";
+import { RecordForm } from "./records/MedRecordForm";
+import { RecordProvider } from "./records/MedRecordsProvider";
 
 export const ApplicationViews = (props) => {
   return (
@@ -31,11 +33,18 @@ export const ApplicationViews = (props) => {
 
       <VetProvider>
         <PetProvider>
-          <Route
-            exact
-            path="/vets/create"
-            render={(props) => <VetForm {...props} />}
-          />
+          <RecordProvider>
+            <Route
+              exact
+              path="/vets/create"
+              render={(props) => <VetForm {...props} />}
+            />
+            <Route
+              exact
+              path="/records/create"
+              render={(props) => <RecordForm {...props} />}
+            />
+          </RecordProvider>
         </PetProvider>
       </VetProvider>
     </>

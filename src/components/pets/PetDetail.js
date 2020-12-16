@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { PetContext } from "./PetProvider";
 import "./Pet.css";
 import { Link } from "react-router-dom";
-import { VetContext } from "../vet/VetProvider";
 
 export const PetDetails = (props) => {
   const {
@@ -68,6 +67,11 @@ export const PetDetails = (props) => {
               </>
             );
           })}
+        </div>
+        <div>
+          <Link to={"/records/create"}>
+            <button>Add Vet Record</button>
+          </Link>
         </div>
       </section>
       <section className="vetInfo">
