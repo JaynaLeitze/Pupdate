@@ -16,37 +16,36 @@ export const ApplicationViews = (props) => {
       <PetParentProvider>
         <PetProvider>
           <VetProvider>
-            <Route exact path="/" render={(props) => <PetList {...props} />} />
+            <RecordProvider>
+              <Route
+                exact
+                path="/"
+                render={(props) => <PetList {...props} />}
+              />
 
-            <Route
-              exact
-              path="/pets/create"
-              render={(props) => <PetForm {...props} />}
-            />
-            <Route
-              path="/pets/:petId(\d+)"
-              render={(props) => <PetDetails {...props} />}
-            />
+              <Route
+                exact
+                path="/pets/create"
+                render={(props) => <PetForm {...props} />}
+              />
+              <Route
+                path="/pets/:petId(\d+)"
+                render={(props) => <PetDetails {...props} />}
+              />
+              <Route
+                exact
+                path="/vets/create"
+                render={(props) => <VetForm {...props} />}
+              />
+              <Route
+                exact
+                path="/records/create"
+                render={(props) => <RecordForm {...props} />}
+              />
+            </RecordProvider>
           </VetProvider>
         </PetProvider>
       </PetParentProvider>
-
-      <VetProvider>
-        <PetProvider>
-          <RecordProvider>
-            <Route
-              exact
-              path="/vets/create"
-              render={(props) => <VetForm {...props} />}
-            />
-            <Route
-              exact
-              path="/records/create"
-              render={(props) => <RecordForm {...props} />}
-            />
-          </RecordProvider>
-        </PetProvider>
-      </VetProvider>
     </>
   );
 };
