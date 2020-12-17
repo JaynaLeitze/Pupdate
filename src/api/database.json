@@ -74,13 +74,13 @@
       "id": 2
     },
     {
-      "date": "2020-12-11",
-      "vetId": "2",
+      "date": "2020-12-24",
+      "vetId": 2,
       "reason": "allergies",
       "treatment": "benadryl",
       "vaccinations": "none",
       "petId": 15,
-      "id": 3
+      "id": 4
     }
   ],
   "symptoms": [

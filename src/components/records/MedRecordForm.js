@@ -32,7 +32,11 @@ export const RecordForm = (props) => {
       <h3>Vet Record</h3>
       <label>Date of Visit:</label>
       <input type="date" name="date" ref={register} />
-      <select defaulValue="" name="vetId" ref={register}>
+      <select
+        defaulValue=""
+        name="vetId"
+        ref={register({ valueAsNumber: true })}
+      >
         <option value="0">Select A Vet...</option>
         {vets.map((v) => (
           <option key={v.id} value={v.id}>
