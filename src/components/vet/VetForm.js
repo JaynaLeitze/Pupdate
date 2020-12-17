@@ -1,12 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { VetContext } from "./VetProvider";
+import { PetContext } from "../pets/PetProvider";
 
 export const VetForm = (props) => {
-  const { addVet } = useContext(VetContext);
+  const { getPets } = useContext(PetContext);
+  const { addVet, getVets } = useContext(VetContext);
   const { register, handleSubmit, watch, errors } = useForm();
+
+  useEffect(() => {
+    getPets().then(getVets);
+  }, []);
+  const userId = parseInt(localStorage.getItem("pet_parent"));
+  const petId = parseInt(props.match.params.petId);
   const onSubmit = (data) => {
+    data.userId = userId;
     addVet(data);
+    props.history.push(`/pets/${petId}`);
   };
   return (
     <form className="vetForm" onSubmit={handleSubmit(onSubmit)}>

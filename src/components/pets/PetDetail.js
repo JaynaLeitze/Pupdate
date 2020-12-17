@@ -13,6 +13,7 @@ export const PetDetails = (props) => {
     getRecordByPetId,
     vetRecords,
   } = useContext(PetContext);
+  const { vets, getVets } = useContext(VetContext);
   const { symptoms, getSymptoms, removeSymptom } = useContext(SymptomContext);
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
@@ -20,7 +21,8 @@ export const PetDetails = (props) => {
   useEffect(() => {
     getPets()
       .then(() => getRecordByPetId(petId))
-      .then(getSymptoms);
+      .then(getSymptoms)
+      .then(getVets);
   }, []);
 
   useEffect(() => {
@@ -106,32 +108,27 @@ export const PetDetails = (props) => {
       </section>
       <section className="vetInfo">
         <h3>Veterinarian</h3>
-
-        {vetRecords.length > 0 ? (
-          vetRecords.map((vet) => {
-            return (
-              <div>
-                <div>{vet.vet.vetName}</div>
-                <div>{vet.vet.addressLine1}</div>
-                <div>{vet.vet.addressLine2}</div>
-                <div>
-                  {vet.vet.city}, {vet.vet.state} {vet.vet.zip}
-                </div>
-                <div>{vet.vet.phone}</div>
-                <div>{vet.vet.email}</div>
-                <div>{vet.vet.website}</div>
-              </div>
-            );
-          })
-        ) : (
-          <>
+        {vets.map((vet) => {
+          return (
             <div>
-              <Link to={"/vets/create"}>
-                <button>Add Veterinarian</button>
-              </Link>
+              <div>{vet.vetName}</div>
+              <div>{vet.addressLine1}</div>
+              <div>{vet.addressLine2}</div>
+              <div>
+                {vet.city}, {vet.state} {vet.zip}
+              </div>
+              <div>{vet.phone}</div>
+              <div>{vet.email}</div>
+              <div>{vet.website}</div>
             </div>
-          </>
-        )}
+          );
+        })}
+
+        <div>
+          <Link to={"/vets/create"}>
+            <button>Add Veterinarian</button>
+          </Link>
+        </div>
       </section>
     </article>
   );

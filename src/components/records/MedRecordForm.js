@@ -33,7 +33,7 @@ export const RecordForm = (props) => {
       <label>Date of Visit:</label>
       <input type="date" name="date" ref={register} />
       <select
-        defaulValue=""
+        defaulvalue=""
         name="vetId"
         ref={register({ valueAsNumber: true })}
       >

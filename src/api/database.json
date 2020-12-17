@@ -35,7 +35,7 @@
       "petConditions": "allergies",
       "petMeds": "",
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
-      "userId": 1,
+      "userId": 2,
       "id": 15
     }
   ],
@@ -45,13 +45,13 @@
       "addressLine1": "1 Dunder Ln",
       "addressLine2": "",
       "city": "Scranton",
-      "state": "PA",
+      "state": "Pa",
       "zip": "34567",
       "phone": "1234567",
       "email": "jim@dundermifflinvets.com",
-      "website": "www.dundermifflinvets.com",
-      "userId": 1,
-      "id": 2
+      "website": "",
+      "userId": 2,
+      "id": 1
     }
   ],
   "records": [
