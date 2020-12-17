@@ -15,18 +15,6 @@
   ],
   "pets": [
     {
-      "petName": "Tonks",
-      "gender": "true",
-      "petBreed": "Pitt",
-      "petAge": "2",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1607709032/pupdate/kflhhdzs8me1yq3jljgy.heic",
-      "userId": 1,
-      "id": 14
-    },
-    {
       "petName": "Champion",
       "gender": "false",
       "petBreed": "pony",
@@ -37,21 +25,6 @@
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
       "userId": 2,
       "id": 15
-    },
-    {
-      "petImage": {
-        "0": {}
-      },
-      "petName": "Sebastian",
-      "gender": "false",
-      "petBreed": "pony",
-      "petAge": "10",
-      "petWeight": "450",
-      "petConditions": "arthritis",
-      "petMeds": "",
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1608221808/pupdate/n0wdejvflkphcfcsiflw.jpg",
-      "userId": 1,
-      "id": 16
     }
   ],
   "vets": [
@@ -63,13 +36,13 @@
       "state": "Pa",
       "zip": "34567",
       "phone": "1234567",
-      "email": "jim@dundermifflinvets.com",
+      "email": "pam@dundermifflinvets.com",
       "website": "",
       "userId": 2,
       "id": 2
     },
     {
-      "vetName": "Jim Halpert",
+      "vetName": "Dr. Jim Halpert",
       "addressLine1": "1 Dunder Ln",
       "addressLine2": "",
       "city": "Scranton",
@@ -84,24 +57,6 @@
   ],
   "records": [
     {
-      "date": "2020-12-10",
-      "reason": "allergies",
-      "treatment": "benadryl",
-      "vaccinations": "none",
-      "petId": 15,
-      "vetId": 2,
-      "id": 1
-    },
-    {
-      "date": "2020-12-10",
-      "reason": "allergies",
-      "treatment": "benadryl",
-      "vaccinations": "none",
-      "petId": 15,
-      "vetId": 2,
-      "id": 2
-    },
-    {
       "date": "2020-12-24",
       "vetId": 2,
       "reason": "allergies",
@@ -109,36 +64,24 @@
       "vaccinations": "none",
       "petId": 15,
       "id": 4
+    },
+    {
+      "date": "2020-12-15",
+      "vetId": 2,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "Rabies",
+      "petId": 15,
+      "id": 5
     }
   ],
   "symptoms": [
     {
-      "date": "2020-12-23",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 16,
-      "id": 1
-    },
-    {
-      "date": "2020-12-14",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 16,
-      "id": 2
-    },
-    {
-      "date": "2020-12-22",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 14,
-      "id": 3
-    },
-    {
-      "date": "2020-12-16",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
+      "date": "2020-12-15",
+      "symptom": "frequent itching",
+      "cause": "being outside",
       "petId": 15,
-      "id": 4
+      "id": 1
     }
   ]
 }
