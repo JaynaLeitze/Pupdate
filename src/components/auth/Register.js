@@ -12,7 +12,7 @@ export const Register = (props) => {
 
   const existingUserCheck = () => {
     // If your json-server URL is different, please change it below!
-    return fetch(`http://localhost:8088/parents?email=${email.current.value}`)
+    return fetch(`http://localhost:8088/users?email=${email.current.value}`)
       .then((_) => _.json())
       .then((user) => !!user.length);
   };
@@ -24,7 +24,7 @@ export const Register = (props) => {
       existingUserCheck().then((userExists) => {
         if (!userExists) {
           // If your json-server URL is different, please change it below!
-          fetch("http://localhost:8088/parents", {
+          fetch("http://localhost:8088/users", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

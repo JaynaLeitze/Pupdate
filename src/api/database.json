@@ -23,7 +23,7 @@
       "petConditions": "",
       "petMeds": "",
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607709032/pupdate/kflhhdzs8me1yq3jljgy.heic",
-      "parentId": 1,
+      "userId": 1,
       "id": 14
     },
     {
@@ -35,7 +35,7 @@
       "petConditions": "allergies",
       "petMeds": "",
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
-      "parentId": 1,
+      "userId": 1,
       "id": 15
     }
   ],
@@ -50,6 +50,7 @@
       "phone": "1234567",
       "email": "jim@dundermifflinvets.com",
       "website": "www.dundermifflinvets.com",
+      "userId": 1,
       "id": 2
     }
   ],
@@ -60,7 +61,26 @@
       "treatment": "benadryl",
       "vaccinations": "none",
       "petId": 15,
+      "vetId": 2,
       "id": 1
+    },
+    {
+      "date": "2020-12-10",
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "none",
+      "petId": 15,
+      "vetId": 2,
+      "id": 2
+    },
+    {
+      "date": "2020-12-11",
+      "vetId": "2",
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "none",
+      "petId": 15,
+      "id": 3
     }
   ],
   "symptoms": [

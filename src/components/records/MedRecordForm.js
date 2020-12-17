@@ -7,10 +7,16 @@ import { PetContext } from "../pets/PetProvider";
 export const RecordForm = (props) => {
   const { register, handleSubmit } = useForm();
   const { addRecord } = useContext(RecordContext);
-  // const { vets, getVets, getVetById } = useContext(VetContext);
-  // const { pets, getPets, getRecordByPetId } = useContext(PetContext);
+  const { vets, getVets } = useContext(VetContext);
+  const { pets, getPets, getRecordByPetId } = useContext(PetContext);
   // const [vet, setVet] = useState({});
   // const [pet, setPet] = useState({});
+
+  useEffect(() => {
+    getVets();
+  }, []);
+
+  //
 
   const petId = parseInt(props.match.params.petId);
   console.log(petId);
@@ -26,6 +32,14 @@ export const RecordForm = (props) => {
       <h3>Vet Record</h3>
       <label>Date of Visit:</label>
       <input type="date" name="date" ref={register} />
+      <select defaulValue="" name="vetId" ref={register}>
+        <option value="0">Select A Vet...</option>
+        {vets.map((v) => (
+          <option key={v.id} value={v.id}>
+            {v.vetName}
+          </option>
+        ))}
+      </select>
       <label>Visit Reason</label>
       <input type="text" name="reason" ref={register} />
       <label>Treatments:</label>
