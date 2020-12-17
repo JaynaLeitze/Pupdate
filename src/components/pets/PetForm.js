@@ -11,7 +11,7 @@ export const PetForm = (props) => {
   const [loading, setLoading] = useState(false);
   const onSubmit = (data) => {
     data.image = image;
-    data.parentId = parseInt(localStorage.getItem("pet_parent"));
+    data.userId = parseInt(localStorage.getItem("pet_parent"));
     addPet(data);
     props.history.push("/");
   };

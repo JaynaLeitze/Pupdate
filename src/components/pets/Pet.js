@@ -2,6 +2,7 @@ import React from "react";
 import "./Pet.css";
 import { Link } from "react-router-dom";
 
+//JSX for User's Pet List
 export const Pet = ({ pet }) => (
   <section className="pet">
     <div>

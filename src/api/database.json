@@ -37,6 +37,21 @@
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
       "userId": 2,
       "id": 15
+    },
+    {
+      "petImage": {
+        "0": {}
+      },
+      "petName": "Sebastian",
+      "gender": "false",
+      "petBreed": "pony",
+      "petAge": "10",
+      "petWeight": "450",
+      "petConditions": "arthritis",
+      "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1608221808/pupdate/n0wdejvflkphcfcsiflw.jpg",
+      "userId": 1,
+      "id": 16
     }
   ],
   "vets": [
@@ -98,18 +113,32 @@
   ],
   "symptoms": [
     {
-      "date": "2020-12-15",
+      "date": "2020-12-23",
       "symptom": "upset stomach",
       "cause": "too many treats",
-      "petId": 15,
+      "petId": 16,
       "id": 1
     },
     {
       "date": "2020-12-14",
       "symptom": "upset stomach",
       "cause": "too many treats",
-      "petId": 15,
+      "petId": 16,
       "id": 2
+    },
+    {
+      "date": "2020-12-22",
+      "symptom": "upset stomach",
+      "cause": "too many treats",
+      "petId": 14,
+      "id": 3
+    },
+    {
+      "date": "2020-12-16",
+      "symptom": "upset stomach",
+      "cause": "too many treats",
+      "petId": 15,
+      "id": 4
     }
   ]
 }

@@ -14,14 +14,16 @@ export const PetDetails = (props) => {
     vetRecords,
   } = useContext(PetContext);
   const { vets, getVets } = useContext(VetContext);
-  const { symptoms, getSymptoms, removeSymptom } = useContext(SymptomContext);
+  const { symptoms, getSymptomsByPetId, removeSymptom } = useContext(
+    SymptomContext
+  );
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
 
   useEffect(() => {
     getPets()
       .then(() => getRecordByPetId(petId))
-      .then(getSymptoms)
+      .then(() => getSymptomsByPetId(petId))
       .then(getVets);
   }, []);
 
@@ -30,16 +32,6 @@ export const PetDetails = (props) => {
     const thisPet = pets.find((pet) => pet.id === petId) || {};
     setPet(thisPet);
   }, [pets]);
-
-  // useEffect(() => {
-  //   const thisVet = vetRecords.map((vetRecord) => {
-  //     console.log(vets);
-  //     setFoundVet(vets.find((v) => v.id === vetRecord.vetId));
-  //   });
-  //   setVet(thisVet);
-  //   console.log(thisVet);
-  // }, [vets]);
-  // console.log(foundVet);
 
   return (
     <article className="petDashboard">
