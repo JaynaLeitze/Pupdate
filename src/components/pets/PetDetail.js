@@ -84,8 +84,8 @@ export const PetDetails = (props) => {
           {vetRecords.map((record) => {
             return (
               <div key={record.id} value={record.id}>
-                <div>{record.vetDate}</div>
-                <div>{record.visitReason}</div>
+                <div>{record.date}</div>
+                <div>{record.reason}</div>
                 <div>{record.treatment}</div>
                 <div>{record.vaccinations}</div>
               </div>
