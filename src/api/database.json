@@ -55,13 +55,12 @@
   ],
   "records": [
     {
-      "date": "",
-      "reason": "",
-      "treatment": "",
-      "vaccinations": "",
+      "date": "2020-12-10",
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "none",
       "petId": 15,
-      "vetId": 2,
-      "id": 13
+      "id": 1
     }
   ],
   "symptoms": [
