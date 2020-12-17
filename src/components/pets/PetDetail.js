@@ -62,7 +62,7 @@ export const PetDetails = (props) => {
         <div>
           {symptoms.map((symptom) => {
             return (
-              <div>
+              <div key={symptom.id} value={symptom.id}>
                 <div>{symptom.symptom}</div>
                 <div>{symptom.date}</div>
                 <div>{symptom.cause}</div>
@@ -91,12 +91,12 @@ export const PetDetails = (props) => {
         <div className="recordCard">
           {vetRecords.map((record) => {
             return (
-              <>
+              <div key={record.id} value={record.id}>
                 <div>{record.vetDate}</div>
                 <div>{record.visitReason}</div>
                 <div>{record.treatment}</div>
                 <div>{record.vaccinations}</div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -110,7 +110,7 @@ export const PetDetails = (props) => {
         <h3>Veterinarian</h3>
         {vets.map((vet) => {
           return (
-            <div>
+            <div key={vet.id} value={vet.id}>
               <div>{vet.vetName}</div>
               <div>{vet.addressLine1}</div>
               <div>{vet.addressLine2}</div>

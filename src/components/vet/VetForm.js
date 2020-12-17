@@ -15,8 +15,7 @@ export const VetForm = (props) => {
   const petId = parseInt(props.match.params.petId);
   const onSubmit = (data) => {
     data.userId = userId;
-    addVet(data);
-    props.history.push(`/pets/${petId}`);
+    addVet(data).then(props.history.push(`/pets/${petId}`));
   };
   return (
     <form className="vetForm" onSubmit={handleSubmit(onSubmit)}>
@@ -38,7 +37,7 @@ export const VetForm = (props) => {
       <input type="text" name="email" ref={register} />
       <label>Website:</label>
       <input type="text" name="website" ref={register} />
-      <input type="submit" />
+      <input type="submit" ref={register} />
     </form>
   );
 };
