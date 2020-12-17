@@ -41,19 +41,6 @@
   ],
   "vets": [
     {
-      "vetName": "Jim Halpert",
-      "addressLine1": "1 Dunder Ln",
-      "addressLine2": "",
-      "city": "Scranton",
-      "state": "Pa",
-      "zip": "34567",
-      "phone": "1234567",
-      "email": "jim@dundermifflinvets.com",
-      "website": "",
-      "userId": 2,
-      "id": 1
-    },
-    {
       "vetName": "Dr. Pam Beasley",
       "addressLine1": "1 Dunder Ln",
       "addressLine2": "",
@@ -65,6 +52,19 @@
       "website": "",
       "userId": 2,
       "id": 2
+    },
+    {
+      "vetName": "Jim Halpert",
+      "addressLine1": "1 Dunder Ln",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "Pa",
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "jim@dundermifflinvets.com",
+      "website": "",
+      "userId": 2,
+      "id": 3
     }
   ],
   "records": [
