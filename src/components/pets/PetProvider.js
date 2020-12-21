@@ -32,7 +32,16 @@ export const PetProvider = (props) => {
       .then(setVetRecords);
   };
 
-  //return context allows child components access
+  const updatePet = (pet) => {
+    console.log(pet);
+    return fetch(`http://localhost:8088/pets/${pet.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(pet),
+    }).then(getPets);
+  };
 
   return (
     <PetContext.Provider
@@ -43,6 +52,7 @@ export const PetProvider = (props) => {
         getPetById,
         getRecordByPetId,
         vetRecords,
+        updatePet,
       }}
     >
       {props.children}

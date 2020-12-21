@@ -25,6 +25,32 @@
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
       "userId": 2,
       "id": 15
+    },
+    {
+      "petName": "Sebastian",
+      "gender": "false",
+      "petBreed": "pony",
+      "petAge": "25",
+      "petWeight": "300",
+      "petConditions": "allergies",
+      "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "petImage": {
+        "0": {}
+      },
+      "petName": "Champion",
+      "gender": "true",
+      "petBreed": "Pitt",
+      "petAge": "5",
+      "petWeight": "60",
+      "petConditions": "",
+      "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1608587832/pupdate/hj0cuj7x5gj04nejwcqr.jpg",
+      "id": 17
     }
   ],
   "vets": [
@@ -53,6 +79,19 @@
       "website": "",
       "userId": 2,
       "id": 3
+    },
+    {
+      "vetName": "Dr. Pam Beasley",
+      "addressLine1": "1 Dunder Ln",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "Pa",
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "pam@dundermifflinvets.com",
+      "website": "dundermifflinvets.com",
+      "userId": 1,
+      "id": 4
     }
   ],
   "records": [
@@ -73,6 +112,15 @@
       "vaccinations": "Rabies",
       "petId": 15,
       "id": 5
+    },
+    {
+      "date": "2020-12-14",
+      "vetId": 4,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "Rabies",
+      "petId": 16,
+      "id": 6
     }
   ],
   "symptoms": [
@@ -82,6 +130,13 @@
       "cause": "being outside",
       "petId": 15,
       "id": 1
+    },
+    {
+      "date": "2020-12-15",
+      "symptom": "Wobbly knees",
+      "cause": "arthritis",
+      "petId": 16,
+      "id": 2
     }
   ]
 }

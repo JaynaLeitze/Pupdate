@@ -49,6 +49,10 @@ export const ApplicationViews = (props) => {
                   path="/symptoms/create/:petId(\d+)"
                   render={(props) => <SymptomForm {...props} />}
                 />
+                <Route
+                  path="/pets/edit/:petId(\d+)"
+                  render={(props) => <PetForm {...props} />}
+                />
               </SymptomProvider>
             </RecordProvider>
           </VetProvider>

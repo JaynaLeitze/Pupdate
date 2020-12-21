@@ -48,6 +48,13 @@ export const PetDetails = (props) => {
           Chronic Conditions:{pet.petConditions}
         </div>
         <div className="petMedications">Medications: </div>
+        <button
+          onClick={() => {
+            props.history.push(`/pets/edit/${pet.id}`);
+          }}
+        >
+          Edit Pet
+        </button>
       </section>
       <section className="symptoms">
         <h3>Symptoms</h3>
