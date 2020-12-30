@@ -11,6 +11,7 @@ import { RecordForm } from "./records/MedRecordForm";
 import { RecordProvider } from "./records/MedRecordsProvider";
 import { SymptomProvider } from "./symptoms/SymptomProvider";
 import { SymptomForm } from "./symptoms/SymptomForm";
+import { SymptomList } from "./symptoms/SymptomList";
 
 export const ApplicationViews = (props) => {
   return (
@@ -48,6 +49,11 @@ export const ApplicationViews = (props) => {
                   exact
                   path="/symptoms/create/:petId(\d+)"
                   render={(props) => <SymptomForm {...props} />}
+                />
+                <Route
+                  exact
+                  path="/symptoms/:petId(\d+)"
+                  render={(props) => <SymptomList {...props} />}
                 />
                 <Route
                   path="/pets/edit/:petId(\d+)"

@@ -137,6 +137,20 @@
       "cause": "arthritis",
       "petId": 16,
       "id": 2
+    },
+    {
+      "date": "2020-04-15",
+      "symptom": "Wobbly knees",
+      "cause": "arthritis",
+      "petId": 16,
+      "id": 2
+    },
+    {
+      "date": "2020-02-27",
+      "symptom": "Wobbly knees",
+      "cause": "arthritis",
+      "petId": 16,
+      "id": 2
     }
   ]
 }

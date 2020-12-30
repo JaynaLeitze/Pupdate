@@ -56,19 +56,19 @@ export const PetDetails = (props) => {
           Edit Pet
         </button>
       </section>
-      <section className="symptoms">
+      <section className="detailSymptoms">
         <h3>Symptoms</h3>
         <div>
-          {symptoms.map((symptom) => {
+          {symptoms.map((symp) => {
             return (
-              <div key={symptom.id} value={symptom.id}>
-                <div>{symptom.symptom}</div>
-                <div>{symptom.date}</div>
-                <div>{symptom.cause}</div>
+              <div key={symp.id} value={symp.id}>
+                <div>{symp.symptom}</div>
+                <div>{symp.date}</div>
+                <div>{symp.cause}</div>
 
                 <button
                   onClick={() => {
-                    removeSymptom(symptom.id).then(() => {
+                    removeSymptom(symp.id).then(() => {
                       props.history.push(`/pets/${pet.id}`);
                     });
                   }}
@@ -82,6 +82,11 @@ export const PetDetails = (props) => {
         <div>
           <Link to={`/symptoms/create/${pet.id}`}>
             <button>Add Symptom</button>
+          </Link>
+        </div>
+        <div>
+          <Link to={`/symptoms/${petId}`}>
+            <button>View All Symptoms</button>
           </Link>
         </div>
       </section>

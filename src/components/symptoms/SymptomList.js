@@ -3,7 +3,7 @@ import { SymptomContext } from "./SymptomProvider";
 import { Symptom } from "./Symptom";
 import "./Symptoms.css";
 
-export const SymptomList = ({ history }) => {
+export const SymptomList = (props) => {
   const { symptoms, searchTerms, getSymptomsByPetId } = useContext(
     SymptomContext
   );
@@ -16,8 +16,8 @@ export const SymptomList = ({ history }) => {
   useEffect(() => {
     if (searchTerms !== "") {
       // If the search field is not blank, display matching symptoms
-      const subset = animals.filter((symptom) =>
-        symptom.name.toLowerCase().includes(searchTerms)
+      const subset = symptoms.filter((symptom) =>
+        symptom.symptom.toLowerCase().includes(searchTerms)
       );
       setFiltered(subset);
     } else {
