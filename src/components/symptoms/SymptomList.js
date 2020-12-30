@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { SymptomContext } from "./SymptomProvider";
 import { Symptom } from "./Symptom";
 import "./Symptoms.css";
+import { SymptomDetails } from "./SymptomDetail";
 
 export const SymptomList = (props) => {
   const { symptoms, searchTerms, getSymptomsByPetId } = useContext(
@@ -32,7 +33,7 @@ export const SymptomList = (props) => {
 
       <div className="symptoms">
         {filteredSymptoms.map((symptom) => {
-          return <Symptom key={symptom.id} symptom={symptom} />;
+          return <SymptomDetails key={symptom.id} symptom={symptom} />;
         })}
       </div>
     </>

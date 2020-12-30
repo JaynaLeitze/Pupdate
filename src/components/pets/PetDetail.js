@@ -4,6 +4,7 @@ import "./Pet.css";
 import { Link } from "react-router-dom";
 import { VetContext } from "../vet/VetProvider";
 import { SymptomContext } from "../symptoms/SymptomProvider";
+import { Symptom } from "../symptoms/Symptom";
 
 export const PetDetails = (props) => {
   const {
@@ -59,22 +60,10 @@ export const PetDetails = (props) => {
       <section className="detailSymptoms">
         <h3>Symptoms</h3>
         <div>
-          {symptoms.map((symp) => {
+          {symptoms.map((symptom) => {
             return (
-              <div key={symp.id} value={symp.id}>
-                <div>{symp.symptom}</div>
-                <div>{symp.date}</div>
-                <div>{symp.cause}</div>
-
-                <button
-                  onClick={() => {
-                    removeSymptom(symp.id).then(() => {
-                      props.history.push(`/pets/${pet.id}`);
-                    });
-                  }}
-                >
-                  Delete Symptom
-                </button>
+              <div>
+                <Symptom key={symptom.id} symptom={symptom} />
               </div>
             );
           })}
