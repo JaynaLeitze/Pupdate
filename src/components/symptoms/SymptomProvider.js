@@ -4,6 +4,7 @@ export const SymptomContext = React.createContext();
 
 export const SymptomProvider = (props) => {
   const [symptoms, setSymptoms] = useState([]);
+  const [searchTerms, setTerms] = useState([""]);
 
   const getSymptoms = () => {
     return fetch("http://localhost:8088/symptoms")
@@ -40,6 +41,8 @@ export const SymptomProvider = (props) => {
         addSymptom,
         removeSymptom,
         getSymptomsByPetId,
+        setTerms,
+        searchTerms,
       }}
     >
       {props.children}
