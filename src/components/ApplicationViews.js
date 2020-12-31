@@ -13,6 +13,7 @@ import { SymptomProvider } from "./symptoms/SymptomProvider";
 import { SymptomForm } from "./symptoms/SymptomForm";
 import { SymptomList } from "./symptoms/SymptomList";
 import { SymptomDetails } from "./symptoms/SymptomDetail";
+import { SymptomSearch } from "./symptoms/SymptomSearch";
 
 export const ApplicationViews = (props) => {
   return (
@@ -54,7 +55,13 @@ export const ApplicationViews = (props) => {
                 <Route
                   exact
                   path="/symptoms/:petId(\d+)"
-                  render={(props) => <SymptomDetails {...props} />}
+                  render={(props) => (
+                    <>
+                      <SymptomSearch {...props} />
+                      <SymptomList {...props} />
+                      <SymptomDetails {...props} />
+                    </>
+                  )}
                 />
                 <Route
                   path="/pets/edit/:petId(\d+)"

@@ -6,10 +6,10 @@ export const SymptomDetails = (props) => {
     SymptomContext
   );
 
+  const petId = parseInt(props.match.params.petId);
   //   const [symptom, setSymptom] = useState([]);
-
+  console.log(props);
   useEffect(() => {
-    const petId = parseInt(props.match.params.petId);
     getSymptomsByPetId(petId);
   }, []);
 

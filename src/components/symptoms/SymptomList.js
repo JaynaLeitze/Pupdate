@@ -33,7 +33,9 @@ export const SymptomList = (props) => {
 
       <div className="symptoms">
         {filteredSymptoms.map((symptom) => {
-          return <SymptomDetails key={symptom.id} symptom={symptom} />;
+          return (
+            <SymptomDetails {...props} key={symptom.id} symptom={symptom} />
+          );
         })}
       </div>
     </>

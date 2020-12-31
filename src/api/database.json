@@ -151,6 +151,20 @@
       "cause": "arthritis",
       "petId": 16,
       "id": 4
+    },
+    {
+      "date": "2020-02-27",
+      "symptom": "Itching",
+      "cause": "allergies",
+      "petId": 16,
+      "id": 5
+    },
+    {
+      "date": "2020-02-27",
+      "symptom": "Itching",
+      "cause": "grass allergies",
+      "petId": 16,
+      "id": 6
     }
   ]
 }
