@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
 .petDashboard {
   display: flex;
   border: 3px blue solid;
@@ -34,6 +36,7 @@
 .addPet h1 {
   background: #12014d;
   padding: 20px 0;
+  font-family: "Josefin", sans-serif;
   font-size: 200%;
   font-weight: 500;
   text-align: center;
@@ -63,7 +66,7 @@
   margin-bottom: 4%;
   border: 1px solid #ccc;
   padding: 3%;
-  color: #555;
+  color: #12014d;
   font: 95% Arial, Helvetica, sans-serif;
 }
 .petForm input[type="text"]:focus,
@@ -97,5 +100,5 @@
 }
 .petForm input[type="submit"]:hover,
 .petForm input[type="button"]:hover {
-  background: #2ebc99;
+  background: #7ed957;
 }

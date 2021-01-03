@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { PetContext } from "./PetProvider";
 import { ImageContext } from "../images/PupdateImages";
+import defaultImage from "./defaultPaw.png";
 
 export const PetForm = (props) => {
   const { pets, addPet, updatePet, getPetById } = useContext(PetContext);
@@ -58,23 +59,6 @@ export const PetForm = (props) => {
 
     setImage(file.secure_url);
     setLoading(false);
-    return (
-      <div className="pupdate_images">
-        <h1>Upload Image</h1>
-        <input
-          type="file"
-          name="file"
-          placeholder="Upload an Image"
-          onChange={uploadImage}
-        />
-
-        {loading ? (
-          <h3>Fetching...</h3>
-        ) : (
-          <img src={image} style={{ width: "300px" }} />
-        )}
-      </div>
-    );
   };
   return (
     <article className="addPet">
@@ -87,8 +71,13 @@ export const PetForm = (props) => {
           onChange={uploadImage}
           defaultValue={pet.image}
         />
+        {loading ? (
+          <h3>Fetching...</h3>
+        ) : (
+          <img src={image} style={{ width: "300px" }} />
+        )}
       </div>
-      <img src={image} alt="" className="img-uploaded" size="10" />
+      {/* <img src={image} alt="" className="img-uploaded" size="10" /> */}
       <form className="petForm" onSubmit={handleSubmit(onSubmit)}>
         <label>Pet Name:</label>
         <input

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.addVet {
+  text-align: center;
+  font-size: large;
+}
+.vetForm {
+  font: "Josefin", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #fff;
+}
+.addVet h1 {
+  background: #12014d;
+  padding: 20px 0;
+  font-family: "Josefin", sans-serif;
+  font-size: 200%;
+  font-weight: 500;
+  text-align: center;
+  color: #7ed957;
+  margin: -16px -16px 16px -16px;
+}
+.vetForm input[type="text"],
+.vetForm input[type="date"],
+.vetForm input[type="datetime"],
+.vetForm input[type="email"],
+.vetForm input[type="number"],
+.vetForm input[type="search"],
+.vetForm input[type="time"],
+.vetForm input[type="url"],
+.vetForm textarea,
+.vetForm select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #eaffe1;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #12014d;
+  font: 95% Arial, Helvetica, sans-serif;
+}
+.vetForm input[type="text"]:focus,
+.vetForm input[type="date"]:focus,
+.vetForm input[type="datetime"]:focus,
+.vetForm input[type="email"]:focus,
+.vetForm input[type="number"]:focus,
+.vetForm input[type="search"]:focus,
+.vetForm input[type="time"]:focus,
+.vetForm input[type="url"]:focus,
+.vetForm textarea:focus,
+.vetForm select:focus {
+  box-shadow: 0 0 5px #12014d;
+  padding: 3%;
+  border: 1px solid #12014d;
+}
+.vetForm input[type="submit"],
+.vetForm input[type="button"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #12014d;
+  border-bottom: 2px solid #7ed957;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #7ed957;
+}
+.vetForm input[type="submit"]:hover,
+.vetForm input[type="button"]:hover {
+  background: #7ed957;
+}
