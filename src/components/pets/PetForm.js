@@ -77,7 +77,8 @@ export const PetForm = (props) => {
     );
   };
   return (
-    <article>
+    <article className="addPet">
+      <h1>Add Pet</h1>
       <div className="upload-img">
         <input
           name="petImage"
@@ -92,6 +93,7 @@ export const PetForm = (props) => {
         <label>Pet Name:</label>
         <input
           name="petName"
+          type="text"
           ref={register}
           placeholder="Name"
           defaultValue={pet.petName}
@@ -104,6 +106,7 @@ export const PetForm = (props) => {
         <label>Breed:</label>
         <input
           name="petBreed"
+          type="text"
           ref={register}
           placeholder="Breed"
           defaultValue={pet.petBreed}
@@ -111,6 +114,7 @@ export const PetForm = (props) => {
         <label>Age:</label>
         <input
           name="petAge"
+          type="number"
           ref={register}
           placeholder="Age"
           defaultValue={pet.petAge}
@@ -118,6 +122,7 @@ export const PetForm = (props) => {
         <label>Weight:</label>
         <input
           name="petWeight"
+          type="number"
           ref={register}
           placeholder="Weight"
           defaultValue={pet.petWeight}
@@ -125,6 +130,7 @@ export const PetForm = (props) => {
         <label>Chronic Conditions:</label>
         <input
           name="petConditions"
+          type="text"
           ref={register}
           placeholder="Conditions"
           defaultValue={pet.petConditions}
@@ -132,6 +138,7 @@ export const PetForm = (props) => {
         <label>Medications:</label>
         <input
           name="petMeds"
+          type="text"
           ref={register}
           placeholder="Medications"
           defaultValue={pet.petMeds}
