@@ -59,7 +59,6 @@ export const ApplicationViews = (props) => {
                     <>
                       <SymptomSearch {...props} />
                       <SymptomList {...props} />
-                      <SymptomDetails {...props} />
                     </>
                   )}
                 />

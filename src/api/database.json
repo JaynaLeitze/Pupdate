@@ -37,6 +37,7 @@
       "petWeight": "300",
       "petConditions": "allergies",
       "petMeds": "",
+      "userId": 1,
       "image": "https://res.cloudinary.com/jayna/image/upload/v1609636289/pupdate/e14pub0znagv8suuocbj.jpg",
       "id": 16
     },
@@ -127,27 +128,6 @@
   ],
   "symptoms": [
     {
-      "date": "2020-12-15",
-      "symptom": "frequent itching",
-      "cause": "being outside",
-      "petId": 15,
-      "id": 1
-    },
-    {
-      "date": "2020-12-15",
-      "symptom": "Wobbly knees",
-      "cause": "arthritis",
-      "petId": 16,
-      "id": 2
-    },
-    {
-      "date": "2020-04-15",
-      "symptom": "Wobbly knees",
-      "cause": "arthritis",
-      "petId": 16,
-      "id": 3
-    },
-    {
       "date": "2020-02-27",
       "symptom": "Wobbly knees",
       "cause": "arthritis",
@@ -167,6 +147,13 @@
       "cause": "grass allergies",
       "petId": 16,
       "id": 6
+    },
+    {
+      "date": "2020-12-25",
+      "symptom": "upset stomach",
+      "cause": "too many treats",
+      "petId": 16,
+      "id": 7
     }
   ]
 }

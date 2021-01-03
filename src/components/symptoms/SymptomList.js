@@ -5,13 +5,16 @@ import "./Symptoms.css";
 import { SymptomDetails } from "./SymptomDetail";
 
 export const SymptomList = (props) => {
-  const { symptoms, searchTerms, getSymptomsByPetId } = useContext(
-    SymptomContext
-  );
+  const {
+    symptoms,
+    searchTerms,
+    getSymptomsByPetId,
+    removeSymptom,
+  } = useContext(SymptomContext);
   const [filteredSymptoms, setFiltered] = useState([]);
-
+  const petId = parseInt(props.match.params.petId);
   useEffect(() => {
-    getSymptomsByPetId();
+    getSymptomsByPetId(petId);
   }, []);
 
   useEffect(() => {
@@ -30,14 +33,25 @@ export const SymptomList = (props) => {
   return (
     <>
       <h1>Symptoms</h1>
-
-      <div className="symptoms">
-        {filteredSymptoms.map((symptom) => {
-          return (
-            <SymptomDetails {...props} key={symptom.id} symptom={symptom} />
-          );
-        })}
-      </div>
+      {filteredSymptoms.map((symptom) => {
+        return (
+          <div className="symptomDetail" key={symptom.id} value={symptom.id}>
+            <div>Symptom: {symptom.symptom}</div>
+            <div>Date: {symptom.date}</div>
+            <div>Likely Cause: {symptom.cause}</div>
+            <button
+              onClick={() => {
+                removeSymptom(symptom.id).then(() => {
+                  props.history.push(`/symptoms/${symptom.petId}`);
+                });
+              }}
+            >
+              Delete Symptom
+            </button>
+          </div>
+        );
+      })}
+      ;
     </>
   );
 };
