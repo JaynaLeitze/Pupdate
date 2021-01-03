@@ -6,6 +6,14 @@ import { NavBar } from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import { Register } from "./components/auth/Register";
 import { PetList } from "./components/pets/PetList";
+import "./Pupdate.css";
+import logo from "./components/auth/Pupdate-logo.png";
+
+function Header() {
+  console.log(logo);
+  return <image src={logo} />;
+}
+export default Header;
 
 export const Pupdate = () => {
   return (

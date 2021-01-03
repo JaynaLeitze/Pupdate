@@ -27,15 +27,17 @@
       "id": 15
     },
     {
+      "petImage": {
+        "0": {}
+      },
       "petName": "Sebastian",
-      "gender": "false",
+      "gender": "true",
       "petBreed": "pony",
       "petAge": "25",
       "petWeight": "300",
       "petConditions": "allergies",
       "petMeds": "",
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
-      "userId": 1,
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1609636289/pupdate/e14pub0znagv8suuocbj.jpg",
       "id": 16
     },
     {

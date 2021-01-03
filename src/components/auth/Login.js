@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import logo from "./Pupdate-logo.png";
 
 export const Login = (props) => {
   const email = useRef();
@@ -53,7 +54,7 @@ export const Login = (props) => {
       </dialog>
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Pupdate</h1>
+          <image src={logo} />
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>
