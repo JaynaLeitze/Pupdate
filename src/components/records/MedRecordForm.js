@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { RecordContext } from "./MedRecordsProvider";
 import { VetContext } from "../vet/VetProvider";
 import { PetContext } from "../pets/PetProvider";
+import "./record.css";
 
 export const RecordForm = (props) => {
   const { register, handleSubmit } = useForm();
@@ -47,9 +48,9 @@ export const RecordForm = (props) => {
       <label>Visit Reason</label>
       <input type="text" name="reason" ref={register} />
       <label>Treatments:</label>
-      <input name="treatment" ref={register} />
+      <input type="text" name="treatment" ref={register} />
       <label>Vaccinations:</label>
-      <input name="vaccinations" ref={register} />
+      <input type="text" name="vaccinations" ref={register} />
       <input type="submit" ref={register} />
     </form>
 

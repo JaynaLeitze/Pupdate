@@ -41,7 +41,7 @@ export const VetForm = (props) => {
         <label>Vet Email:</label>
         <input type="email" name="email" ref={register} />
         <label>Website:</label>
-        <input type="text" name="website" ref={register} />
+        <input type="url" name="website" ref={register} />
         <input type="submit" />
       </form>
     </article>

@@ -1,39 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-.petDashboard {
-  display: flex;
-  border: 3px blue solid;
-  justify-content: space-between;
-}
-.userPetCard {
-  border: 2px red dotted;
-}
-.petCard {
-  border: 2px purple dashed;
-}
-
-/* .symptoms {
-  border: 2px goldenrod dotted;
-} */
-
-.medRecords {
-  border: 2px aqua dashed;
-}
-.vetInfo {
-  border: 2px green dotted;
-}
-.addPet {
-  text-align: center;
-  font-size: large;
-}
-.petForm {
-  font: 95% Arial, Helvetica, sans-serif;
+.recordForm {
+  font: "Josefin", sans-serif;
   max-width: 400px;
   margin: 10px auto;
   padding: 16px;
   background: #f7f7f7;
 }
-.addPet h1 {
+.recordForm h3 {
   background: #12014d;
   padding: 20px 0;
   font-family: "Josefin", sans-serif;
@@ -43,16 +17,11 @@
   color: #7ed957;
   margin: -16px -16px 16px -16px;
 }
-.petForm input[type="text"],
-.petForm input[type="date"],
-.petForm input[type="datetime"],
-.petForm input[type="email"],
-.petForm input[type="number"],
-.petForm input[type="search"],
-.petForm input[type="time"],
-.petForm input[type="url"],
-.petForm textarea,
-.petForm select {
+.recordForm input[type="text"],
+.recordForm input[type="date"],
+.recordForm input[type="url"],
+.recordForm textarea,
+.recordForm select {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -69,30 +38,25 @@
   color: #12014d;
   font: 95% Arial, Helvetica, sans-serif;
 }
-.petForm input[type="text"]:focus,
-.petForm input[type="date"]:focus,
-.petForm input[type="datetime"]:focus,
-.petForm input[type="email"]:focus,
-.petForm input[type="number"]:focus,
-.petForm input[type="search"]:focus,
-.petForm input[type="time"]:focus,
-.petForm input[type="url"]:focus,
-.petForm textarea:focus,
-.petForm select:focus {
+.recordForm input[type="text"]:focus,
+.recordForm input[type="date"]:focus,
+.recordForm input[type="url"]:focus,
+.recordForm textarea:focus,
+.recordForm select:focus {
   box-shadow: 0 0 5px #12014d;
   padding: 3%;
   border: 1px solid #12014d;
 }
 
-.petForm input[type="submit"],
-.petForm input[type="button"] {
+.recordForm input[type="submit"],
+.recordForm input[type="button"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   width: 100%;
   padding: 3%;
   background: #12014d;
-  border-bottom: 2px solid #30c29e;
+  border-bottom: 2px solid #7ed957;
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
