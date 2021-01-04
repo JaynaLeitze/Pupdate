@@ -14,14 +14,18 @@ export const PetList = ({ history }) => {
   return (
     <>
       <h1>Your Pets</h1>
-      <div className="yourPets">
-        {pets.map((pet) => {
-          if (pet.userId === user) return <Pet key={pet.id} pet={pet} />;
-        })}
+      <div className="userPets">
+        <div className="yourPets">
+          {pets.map((pet) => {
+            if (pet.userId === user) return <Pet key={pet.id} pet={pet} />;
+          })}
+        </div>
+        <div className="addPetButton">
+          <button onClick={() => history.push("/pets/create")}>
+            Add a Pet
+          </button>
+        </div>
       </div>
-      <button className="addPet" onClick={() => history.push("/pets/create")}>
-        Add a Pet
-      </button>
     </>
   );
 };

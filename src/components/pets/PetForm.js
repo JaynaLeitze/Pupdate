@@ -62,8 +62,9 @@ export const PetForm = (props) => {
   };
   return (
     <article className="addPet">
-      <h1>Add Pet</h1>
+      <h1>Add/Edit Pet</h1>
       <div className="upload-img">
+        <h5>Upload Image</h5>
         <input
           name="petImage"
           ref={register}

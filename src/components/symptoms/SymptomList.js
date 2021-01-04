@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SymptomContext } from "./SymptomProvider";
 import { Symptom } from "./Symptom";
-import "./Symptoms.css";
+import "./symptom.css";
 import { SymptomDetails } from "./SymptomDetail";
+import { SymptomSearch } from "./SymptomSearch";
 
 export const SymptomList = (props) => {
   const {
@@ -33,24 +34,27 @@ export const SymptomList = (props) => {
   return (
     <>
       <h1>Symptoms</h1>
-      {filteredSymptoms.map((symptom) => {
-        return (
-          <div className="symptomDetail" key={symptom.id} value={symptom.id}>
-            <div>Symptom: {symptom.symptom}</div>
-            <div>Date: {symptom.date}</div>
-            <div>Likely Cause: {symptom.cause}</div>
-            <button
-              onClick={() => {
-                removeSymptom(symptom.id).then(() => {
-                  props.history.push(`/symptoms/${symptom.petId}`);
-                });
-              }}
-            >
-              Delete Symptom
-            </button>
-          </div>
-        );
-      })}
+      <SymptomSearch {...props} />
+      <div className="symptomList">
+        {filteredSymptoms.map((symptom) => {
+          return (
+            <div className="symptomDetail" key={symptom.id} value={symptom.id}>
+              <div>Symptom: {symptom.symptom}</div>
+              <div>Date: {symptom.date}</div>
+              <div>Likely Cause: {symptom.cause}</div>
+              <button
+                onClick={() => {
+                  removeSymptom(symptom.id).then(() => {
+                    props.history.push(`/symptoms/${symptom.petId}`);
+                  });
+                }}
+              >
+                Delete Symptom
+              </button>
+            </div>
+          );
+        })}
+      </div>
       ;
     </>
   );

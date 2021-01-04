@@ -124,6 +124,15 @@
       "vaccinations": "Rabies",
       "petId": 16,
       "id": 6
+    },
+    {
+      "date": "2020-06-03",
+      "vetId": 4,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "",
+      "petId": 16,
+      "id": 7
     }
   ],
   "symptoms": [
@@ -147,13 +156,6 @@
       "cause": "grass allergies",
       "petId": 16,
       "id": 6
-    },
-    {
-      "date": "2020-12-25",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 16,
-      "id": 7
     }
   ]
 }

@@ -2,46 +2,145 @@
 
 .petDashboard {
   display: flex;
-  border: 3px blue solid;
   justify-content: space-between;
 }
 .userPetCard {
-  border: 2px red dotted;
+  font: "Josefin", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #eaffe1;
+  border-radius: 10%;
+  box-shadow: 6px 6px 6px #12014d;
+  border: 4px #12014d;
+  text-align: center;
+}
+.addPetButton {
+  margin: auto;
+  text-align: center;
+}
+.addVetButton {
+  margin: auto;
+  text-align: center;
 }
 .petCard {
-  border: 2px purple dashed;
+  font: "Josefin", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #eaffe1;
+  border-radius: 10%;
+  box-shadow: 6px 6px 6px #12014d;
+  border: 4px #12014d;
 }
 
-/* .symptoms {
-  border: 2px goldenrod dotted;
-} */
+.detailSymptoms {
+  font: "Josefin", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  min-width: 300px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #eaffe1;
+  border-radius: 10%;
+  box-shadow: 6px 6px 6px #12014d;
+  text-align: left;
+  justify-content: center;
+  align-content: center;
+}
+.petCard img {
+  border-radius: 8%;
+}
+.symptomCard {
+  font: "Josefin", sans-serif;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+  border: 2px solid #12014d;
+}
 
 .medRecords {
-  border: 2px aqua dashed;
+  font: "Josefin", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  min-width: 300px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #eaffe1;
+  border-radius: 10%;
+  box-shadow: 6px 6px 6px #12014d;
+  text-align: left;
+  justify-content: center;
+  align-content: center;
+}
+.recordCard {
+  font: "Josefin", sans-serif;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+  border: 2px solid #12014d;
+}
+.vetCard {
+  font: "Josefin", sans-serif;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  background: #f7f7f7;
+  border: 2px solid #12014d;
 }
 .vetInfo {
-  border: 2px green dotted;
+  font: "Josefin", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  min-width: 300px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #eaffe1;
+  border-radius: 10%;
+  box-shadow: 6px 6px 6px #12014d;
+  text-align: left;
+  justify-content: center;
+  align-content: center;
 }
 .addPet {
   text-align: center;
   font-size: large;
 }
 .petForm {
-  font: 95% Arial, Helvetica, sans-serif;
+  font: "Josefin", sans-serif;
   max-width: 400px;
   margin: 10px auto;
   padding: 16px;
   background: #f7f7f7;
 }
+.petDashboard h3 {
+  align-self: center;
+  background: #12014d;
+  padding: 5px 0;
+  font-family: "Josefin", sans-serif;
+  font-size: 200%;
+  font-weight: 500;
+  text-align: center;
+  max-width: 250px;
+  color: #7ed957;
+  margin: 25px 25px 25px 25px;
+}
 .addPet h1 {
   background: #12014d;
+  margin: auto;
   padding: 20px 0;
   font-family: "Josefin", sans-serif;
   font-size: 200%;
   font-weight: 500;
   text-align: center;
   color: #7ed957;
-  margin: -16px -16px 16px -16px;
+  margin: auto;
 }
 .petForm input[type="text"],
 .petForm input[type="date"],
@@ -53,6 +152,7 @@
 .petForm input[type="url"],
 .petForm textarea,
 .petForm select {
+  transition: all;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;

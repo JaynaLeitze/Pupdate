@@ -57,7 +57,7 @@ export const ApplicationViews = (props) => {
                   path="/symptoms/:petId(\d+)"
                   render={(props) => (
                     <>
-                      <SymptomSearch {...props} />
+                      {/* <SymptomSearch {...props} /> */}
                       <SymptomList {...props} />
                     </>
                   )}

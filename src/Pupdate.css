@@ -29,5 +29,6 @@ strong {
   font-weight: bold;
 }
 .logo {
-  width: 300px;
+  width: 150px;
+  border-radius: 100%;
 }
