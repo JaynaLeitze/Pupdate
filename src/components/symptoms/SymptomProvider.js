@@ -3,12 +3,13 @@ import React, { useState } from "react";
 export const SymptomContext = React.createContext();
 
 export const SymptomProvider = (props) => {
-  const [symptoms, setSymptom] = useState([]);
+  const [symptoms, setSymptoms] = useState([]);
+  const [searchTerms, setTerms] = useState([""]);
 
   const getSymptoms = () => {
     return fetch("http://localhost:8088/symptoms")
       .then((res) => res.json())
-      .then(setSymptom);
+      .then(setSymptoms);
   };
 
   const addSymptom = (symptom) => {
@@ -18,7 +19,13 @@ export const SymptomProvider = (props) => {
         "Content-type": "application/json",
       },
       body: JSON.stringify(symptom),
-    }).then(getSymptoms);
+    }).then(getSymptomsByPetId);
+  };
+
+  const getSymptomsByPetId = (petId) => {
+    return fetch(`http://localhost:8088/symptoms?petId=${petId}`)
+      .then((res) => res.json())
+      .then(setSymptoms);
   };
 
   const removeSymptom = (symptomId) => {
@@ -33,6 +40,9 @@ export const SymptomProvider = (props) => {
         getSymptoms,
         addSymptom,
         removeSymptom,
+        getSymptomsByPetId,
+        setTerms,
+        searchTerms,
       }}
     >
       {props.children}

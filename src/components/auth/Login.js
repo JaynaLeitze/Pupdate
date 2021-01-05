@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import logo from "./Pupdate-logo.png";
 
 export const Login = (props) => {
   const email = useRef();
@@ -10,7 +11,7 @@ export const Login = (props) => {
 
   const existingUserCheck = () => {
     // If your json-server URL is different, please change it below!
-    return fetch(`http://localhost:8088/parents?email=${email.current.value}`)
+    return fetch(`http://localhost:8088/users?email=${email.current.value}`)
       .then((_) => _.json())
       .then((user) => (user.length ? user[0] : false));
   };
@@ -53,7 +54,6 @@ export const Login = (props) => {
       </dialog>
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Pupdate</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>

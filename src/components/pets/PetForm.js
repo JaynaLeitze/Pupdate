@@ -3,17 +3,41 @@ import { useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { PetContext } from "./PetProvider";
 import { ImageContext } from "../images/PupdateImages";
+import defaultImage from "./defaultPaw.png";
 
 export const PetForm = (props) => {
-  const { addPet } = useContext(PetContext);
+  const { pets, addPet, updatePet, getPetById } = useContext(PetContext);
   const [image, setImage] = useState("");
   const { register, handleSubmit, watch, errors } = useForm();
   const [loading, setLoading] = useState(false);
+  const editMode = props.match.params.hasOwnProperty("petId");
+  console.log(props.match.params);
+  const petId = props.match.params.petId;
+  const [pet, setPet] = useState({});
+
+  const getPetInEditMode = () => {
+    if (editMode) {
+      getPetById(petId).then(setPet);
+    }
+  };
+
+  useEffect(() => {
+    getPetInEditMode();
+  }, [pets]);
+
   const onSubmit = (data) => {
-    data.image = image;
-    data.parentId = parseInt(localStorage.getItem("pet_parent"));
-    addPet(data);
-    props.history.push("/");
+    console.log(data);
+    if (editMode) {
+      data.image = image;
+      data.id = petId;
+      updatePet(data);
+      props.history.push(`/pets/${petId}`);
+    } else {
+      data.image = image;
+      data.userId = parseInt(localStorage.getItem("pet_parent"));
+      addPet(data);
+      props.history.push("/");
+    }
   };
 
   const uploadImage = async (e) => {
@@ -35,53 +59,80 @@ export const PetForm = (props) => {
 
     setImage(file.secure_url);
     setLoading(false);
-    return (
-      <div className="pupdate_images">
-        <h1>Upload Image</h1>
+  };
+  return (
+    <article className="addPet">
+      <h1>Add/Edit Pet</h1>
+      <div className="upload-img">
+        <h5>Upload Image</h5>
         <input
+          name="petImage"
+          ref={register}
           type="file"
-          name="file"
-          placeholder="Upload an Image"
           onChange={uploadImage}
+          defaultValue={pet.image}
         />
-
         {loading ? (
           <h3>Fetching...</h3>
         ) : (
           <img src={image} style={{ width: "300px" }} />
         )}
       </div>
-    );
-  };
-  return (
-    <article>
-      <div className="upload-img">
-        <input
-          name="petImage"
-          ref={register}
-          type="file"
-          onChange={uploadImage}
-        />
-      </div>
-      <img src={image} alt="" className="img-uploaded" size="10" />
+      {/* <img src={image} alt="" className="img-uploaded" size="10" /> */}
       <form className="petForm" onSubmit={handleSubmit(onSubmit)}>
         <label>Pet Name:</label>
-        <input name="petName" ref={register} placeholder="Name" />
+        <input
+          name="petName"
+          type="text"
+          ref={register}
+          placeholder="Name"
+          defaultValue={pet.petName}
+        />
         <label>Gender:</label>
         <select name="gender" ref={register}>
           <option value="true">Female</option>
           <option value="false">Male</option>
         </select>
         <label>Breed:</label>
-        <input name="petBreed" ref={register} placeholder="Breed" />
+        <input
+          name="petBreed"
+          type="text"
+          ref={register}
+          placeholder="Breed"
+          defaultValue={pet.petBreed}
+        />
         <label>Age:</label>
-        <input name="petAge" ref={register} placeholder="Age" />
+        <input
+          name="petAge"
+          type="number"
+          ref={register}
+          placeholder="Age"
+          defaultValue={pet.petAge}
+        />
         <label>Weight:</label>
-        <input name="petWeight" ref={register} placeholder="Weight" />
+        <input
+          name="petWeight"
+          type="number"
+          ref={register}
+          placeholder="Weight"
+          defaultValue={pet.petWeight}
+        />
         <label>Chronic Conditions:</label>
-        <input name="petConditions" ref={register} placeholder="Conditions" />
+        <input
+          name="petConditions"
+          type="text"
+          ref={register}
+          placeholder="Conditions"
+          defaultValue={pet.petConditions}
+        />
         <label>Medications:</label>
-        <input name="petMeds" ref={register} placeholder="Medications" />
+        <input
+          name="petMeds"
+          type="text"
+          ref={register}
+          placeholder="Medications"
+          defaultValue={pet.petMeds}
+        />
 
         <input type="submit" />
       </form>

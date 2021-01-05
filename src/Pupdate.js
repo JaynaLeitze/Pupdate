@@ -6,8 +6,11 @@ import { NavBar } from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import { Register } from "./components/auth/Register";
 import { PetList } from "./components/pets/PetList";
+import "./Pupdate.css";
+import logo from "./components/Pupdate.png";
 
 export const Pupdate = () => {
+  const image = logo;
   return (
     <>
       <Route
@@ -16,7 +19,7 @@ export const Pupdate = () => {
             return (
               <>
                 {/* <Route render={(props) => <NavBar {...props} />} /> */}
-
+                <img className="logo" src={image} />
                 <Route render={(props) => <ApplicationViews {...props} />} />
               </>
             );
@@ -25,7 +28,7 @@ export const Pupdate = () => {
           }
         }}
       />
-
+      {/* <img className="logo" src={image} /> */}
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
     </>

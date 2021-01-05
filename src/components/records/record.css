@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.recordForm {
+  font: "Josefin", sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+}
+.recordForm h3 {
+  background: #12014d;
+  padding: 20px 0;
+  font-family: "Josefin", sans-serif;
+  font-size: 200%;
+  font-weight: 500;
+  text-align: center;
+  color: #7ed957;
+  margin: -16px -16px 16px -16px;
+}
+.recordForm input[type="text"],
+.recordForm input[type="date"],
+.recordForm input[type="url"],
+.recordForm textarea,
+.recordForm select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #12014d;
+  font: 95% Arial, Helvetica, sans-serif;
+}
+.recordForm input[type="text"]:focus,
+.recordForm input[type="date"]:focus,
+.recordForm input[type="url"]:focus,
+.recordForm textarea:focus,
+.recordForm select:focus {
+  box-shadow: 0 0 5px #12014d;
+  padding: 3%;
+  border: 1px solid #12014d;
+}
+
+.recordForm input[type="submit"],
+.recordForm input[type="button"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #12014d;
+  border-bottom: 2px solid #7ed957;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #7ed957;
+}
+.petForm input[type="submit"]:hover,
+.petForm input[type="button"]:hover {
+  background: #7ed957;
+}

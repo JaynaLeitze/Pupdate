@@ -6,7 +6,8 @@ export const VetProvider = (props) => {
   const [vets, setVet] = useState([]);
 
   const getVets = () => {
-    return fetch("http://localhost:8088/vets")
+    const activeUser = parseInt(localStorage.getItem("pet_parent"));
+    return fetch(`http://localhost:8088/vets?userId=${activeUser}`)
       .then((res) => res.json())
       .then(setVet);
   };

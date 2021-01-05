@@ -1,5 +1,5 @@
 {
-  "parents": [
+  "users": [
     {
       "email": "leslie@pawnee.gov",
       "password": "pawnee",
@@ -15,18 +15,6 @@
   ],
   "pets": [
     {
-      "petName": "Tonks",
-      "gender": "true",
-      "petBreed": "Pitt",
-      "petAge": "2",
-      "petWeight": "60",
-      "petConditions": "",
-      "petMeds": "",
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1607709032/pupdate/kflhhdzs8me1yq3jljgy.heic",
-      "parentId": 1,
-      "id": 14
-    },
-    {
       "petName": "Champion",
       "gender": "false",
       "petBreed": "pony",
@@ -35,58 +23,139 @@
       "petConditions": "allergies",
       "petMeds": "",
       "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
-      "parentId": 1,
+      "userId": 2,
       "id": 15
+    },
+    {
+      "petImage": {
+        "0": {}
+      },
+      "petName": "Sebastian",
+      "gender": "true",
+      "petBreed": "pony",
+      "petAge": "25",
+      "petWeight": "300",
+      "petConditions": "allergies",
+      "petMeds": "",
+      "userId": 1,
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1609636289/pupdate/e14pub0znagv8suuocbj.jpg",
+      "id": 16
+    },
+    {
+      "petImage": {
+        "0": {}
+      },
+      "petName": "Champion",
+      "gender": "true",
+      "petBreed": "Pitt",
+      "petAge": "5",
+      "petWeight": "60",
+      "petConditions": "",
+      "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1608587832/pupdate/hj0cuj7x5gj04nejwcqr.jpg",
+      "id": 17
     }
   ],
   "vets": [
     {
-      "vetName": "Jim Halpert",
+      "vetName": "Dr. Pam Beasley",
       "addressLine1": "1 Dunder Ln",
       "addressLine2": "",
       "city": "Scranton",
-      "state": "PA",
+      "state": "Pa",
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "pam@dundermifflinvets.com",
+      "website": "",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "vetName": "Dr. Jim Halpert",
+      "addressLine1": "1 Dunder Ln",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "Pa",
       "zip": "34567",
       "phone": "1234567",
       "email": "jim@dundermifflinvets.com",
-      "website": "www.dundermifflinvets.com",
-      "id": 2
+      "website": "",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "vetName": "Dr. Pam Beasley",
+      "addressLine1": "1 Dunder Ln",
+      "addressLine2": "",
+      "city": "Scranton",
+      "state": "Pa",
+      "zip": "34567",
+      "phone": "1234567",
+      "email": "pam@dundermifflinvets.com",
+      "website": "dundermifflinvets.com",
+      "userId": 1,
+      "id": 4
     }
   ],
   "records": [
     {
-      "id": 1,
-      "petId": 14,
+      "date": "2020-12-24",
       "vetId": 2,
-      "vaccinations": "rabies",
-      "vetDate": "12/12/2020",
-      "visitReason": "check up",
-      "treatment": "none"
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "none",
+      "petId": 15,
+      "id": 4
     },
     {
-      "id": 2,
-      "petId": 15,
+      "date": "2020-12-15",
       "vetId": 2,
-      "vaccinations": "rabies",
-      "vetDate": "12/12/2020",
-      "visitReason": "check up",
-      "treatment": "none"
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "Rabies",
+      "petId": 15,
+      "id": 5
+    },
+    {
+      "date": "2020-12-14",
+      "vetId": 4,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "Rabies",
+      "petId": 16,
+      "id": 6
+    },
+    {
+      "date": "2020-06-03",
+      "vetId": 4,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "",
+      "petId": 16,
+      "id": 7
     }
   ],
   "symptoms": [
     {
-      "date": "2020-12-15",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 15,
-      "id": 1
+      "date": "2020-02-27",
+      "symptom": "Wobbly knees",
+      "cause": "arthritis",
+      "petId": 16,
+      "id": 4
     },
     {
-      "date": "2020-12-14",
-      "symptom": "upset stomach",
-      "cause": "too many treats",
-      "petId": 15,
-      "id": 2
+      "date": "2020-02-27",
+      "symptom": "Itching",
+      "cause": "allergies",
+      "petId": 16,
+      "id": 5
+    },
+    {
+      "date": "2020-02-27",
+      "symptom": "Itching",
+      "cause": "grass allergies",
+      "petId": 16,
+      "id": 6
     }
   ]
 }

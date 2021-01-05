@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { SymptomContext } from "./SymptomProvider";
 import { PetContext } from "../pets/PetProvider";
+import "./symptom.css";
 
 export const SymptomForm = (props) => {
   const { symptoms, addSymptom } = useContext(SymptomContext);
@@ -15,13 +16,13 @@ export const SymptomForm = (props) => {
 
   return (
     <form className="symptomForm" onSubmit={handleSubmit(onSubmit)}>
-      <h3>Symptom</h3>
+      <h3>Add Symptom</h3>
       <label>Date</label>
       <input type="date" name="date" ref={register} />
       <label>Symptom</label>
       <input type="text" name="symptom" ref={register} />
       <label>Likely Cause:</label>
-      <input name="cause" ref={register} />
+      <input type="text" name="cause" ref={register} />
       <input type="submit" ref={register} />
     </form>
   );

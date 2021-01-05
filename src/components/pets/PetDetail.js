@@ -4,6 +4,7 @@ import "./Pet.css";
 import { Link } from "react-router-dom";
 import { VetContext } from "../vet/VetProvider";
 import { SymptomContext } from "../symptoms/SymptomProvider";
+import { Symptom } from "../symptoms/Symptom";
 
 export const PetDetails = (props) => {
   const {
@@ -13,14 +14,18 @@ export const PetDetails = (props) => {
     getRecordByPetId,
     vetRecords,
   } = useContext(PetContext);
-  const { symptoms, getSymptoms, removeSymptom } = useContext(SymptomContext);
+  const { vets, getVets } = useContext(VetContext);
+  const { symptoms, getSymptomsByPetId, removeSymptom } = useContext(
+    SymptomContext
+  );
   const petId = parseInt(props.match.params.petId);
   const [pet, setPet] = useState({});
 
   useEffect(() => {
     getPets()
       .then(() => getRecordByPetId(petId))
-      .then(getSymptoms);
+      .then(() => getSymptomsByPetId(petId))
+      .then(getVets);
   }, []);
 
   useEffect(() => {
@@ -29,51 +34,46 @@ export const PetDetails = (props) => {
     setPet(thisPet);
   }, [pets]);
 
-  // useEffect(() => {
-  //   const thisVet = vetRecords.map((vetRecord) => {
-  //     console.log(vets);
-  //     setFoundVet(vets.find((v) => v.id === vetRecord.vetId));
-  //   });
-  //   setVet(thisVet);
-  //   console.log(thisVet);
-  // }, [vets]);
-  // console.log(foundVet);
-
   return (
     <article className="petDashboard">
       <section className="petCard">
         <img width="300px" src={pet.image} />
+        <div></div>
         <h3 className="petName">{pet.petName}</h3>
-        <div className="petBreed">Breed: {pet.petBreed}</div>
-        <div className="petAge">Age:{pet.petAge}</div>
+        <div className="petBreed">
+          <b>Breed:</b> {pet.petBreed}
+        </div>
+        <div className="petAge">
+          <b>Age:</b> {pet.petAge}
+        </div>
         <div className="petGender">
-          Gender:{pet.gender === true ? "Male" : "Female"}
+          <b>Gender:</b> {pet.gender === true ? "Male" : "Female"}
         </div>
-        <div className="petWeight">Weight:{pet.petWeight}</div>
+        <div className="petWeight">
+          <b>Weight:</b> {pet.petWeight}lbs{" "}
+        </div>
         <div className="petConditions">
-          Chronic Conditions:{pet.petConditions}
+          <b> Chronic Conditions:</b> {pet.petConditions}
         </div>
-        <div className="petMedications">Medications: </div>
+        <div className="petMedications">
+          <b>Medications:</b>{" "}
+        </div>
+        <button
+          onClick={() => {
+            props.history.push(`/pets/edit/${pet.id}`);
+          }}
+        >
+          Edit Pet
+        </button>
       </section>
-      <section className="symptoms">
+      <section className="detailSymptoms">
+        <div></div>
         <h3>Symptoms</h3>
         <div>
           {symptoms.map((symptom) => {
             return (
-              <div>
-                <div>{symptom.symptom}</div>
-                <div>{symptom.date}</div>
-                <div>{symptom.cause}</div>
-
-                <button
-                  onClick={() => {
-                    removeSymptom(symptom.id).then(() => {
-                      props.history.push(`/pets/${pet.id}`);
-                    });
-                  }}
-                >
-                  Delete Symptom
-                </button>
+              <div className="symptomCard">
+                <Symptom key={symptom.id} symptom={symptom} />
               </div>
             );
           })}
@@ -83,50 +83,73 @@ export const PetDetails = (props) => {
             <button>Add Symptom</button>
           </Link>
         </div>
+        <div>
+          <Link to={`/symptoms/${petId}`}>
+            <button>View All Symptoms</button>
+          </Link>
+        </div>
       </section>
       <section className="medRecords">
         <h3>Medical Records</h3>
-        <div className="recordCard">
+        <div>
           {vetRecords.map((record) => {
             return (
-              <>
-                <div>{record.vetDate}</div>
-                <div>{record.visitReason}</div>
-                <div>{record.treatment}</div>
-                <div>{record.vaccinations}</div>
-              </>
+              <div className="recordCard" key={record.id} value={record.id}>
+                <div>
+                  <b>Date:</b> {record.date}
+                </div>
+                <div>
+                  <b>Visit Reason:</b> {record.reason}
+                </div>
+                <div>
+                  <b>Treatments:</b> {record.treatment}
+                </div>
+                <div>
+                  <b>Vaccinations:</b> {record.vaccinations}
+                </div>
+              </div>
             );
           })}
+        </div>
+        <div>
+          <Link to={`/records/create/${pet.id}`}>
+            <button>Add Vet Record</button>
+          </Link>
         </div>
       </section>
       <section className="vetInfo">
         <h3>Veterinarian</h3>
-
-        {vetRecords.length > 0 ? (
-          vetRecords.map((vet) => {
-            return (
-              <>
-                <div>{vet.vet.vetName}</div>
-                <div>{vet.vet.addressLine1}</div>
-                <div>{vet.vet.addressLine2}</div>
+        {vets.map((vet) => {
+          return (
+            <div className="vetCard" key={vet.id} value={vet.id}>
+              <div>
+                <b>{vet.vetName}</b>
+              </div>
+              <address>
+                <div>{vet.addressLine1}</div>
+                <div>{vet.addressLine2}</div>
                 <div>
-                  {vet.vet.city}, {vet.vet.state} {vet.vet.zip}
+                  {vet.city}, {vet.state} {vet.zip}
                 </div>
-                <div>{vet.vet.phone}</div>
-                <div>{vet.vet.email}</div>
-                <div>{vet.vet.website}</div>
-              </>
-            );
-          })
-        ) : (
-          <>
-            <div>
-              <Link to={"/vets/create"}>
-                <button>Add Veterinarian</button>
-              </Link>
+              </address>
+              <div>
+                <b>Phone:</b> {vet.phone}
+              </div>
+              <div>
+                <b>Email:</b> {vet.email}
+              </div>
+              <div>
+                <b>Website:</b> {vet.website}
+              </div>
             </div>
-          </>
-        )}
+          );
+        })}
+
+        <div className="addVetButton">
+          <Link to={"/vets/create"}>
+            <button>Add Veterinarian</button>
+          </Link>
+        </div>
       </section>
     </article>
   );
