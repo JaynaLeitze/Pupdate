@@ -15,36 +15,18 @@
   ],
   "pets": [
     {
-      "petName": "Champion",
-      "gender": "false",
-      "petBreed": "pony",
-      "petAge": "3",
-      "petWeight": "60",
-      "petConditions": "allergies",
-      "petMeds": "",
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1607710176/pupdate/buajfbhcde0ouebplkwe.jpg",
-      "userId": 2,
-      "id": 15
-    },
-    {
-      "petImage": {
-        "0": {}
-      },
       "petName": "Sebastian",
       "gender": "true",
-      "petBreed": "pony",
+      "petBreed": "Pony",
       "petAge": "25",
       "petWeight": "300",
       "petConditions": "allergies",
-      "petMeds": "",
+      "petMeds": "aspirin",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1609809310/pupdate/hbbqttkhjvmfisoxh8mi.jpg",
       "userId": 1,
-      "image": "https://res.cloudinary.com/jayna/image/upload/v1609636289/pupdate/e14pub0znagv8suuocbj.jpg",
       "id": 16
     },
     {
-      "petImage": {
-        "0": {}
-      },
       "petName": "Champion",
       "gender": "true",
       "petBreed": "Pitt",
@@ -53,7 +35,23 @@
       "petConditions": "",
       "petMeds": "",
       "image": "https://res.cloudinary.com/jayna/image/upload/v1608587832/pupdate/hj0cuj7x5gj04nejwcqr.jpg",
+      "userId": 2,
       "id": 17
+    },
+    {
+      "petImage": {
+        "0": {}
+      },
+      "petName": "Manny",
+      "gender": "false",
+      "petBreed": "american shorthair",
+      "petAge": "12",
+      "petWeight": "11",
+      "petConditions": "",
+      "petMeds": "",
+      "image": "https://res.cloudinary.com/jayna/image/upload/v1609860324/pupdate/graolcrkmyu5qz6cw1uh.jpg",
+      "userId": 2,
+      "id": 18
     }
   ],
   "vets": [
@@ -133,6 +131,24 @@
       "vaccinations": "",
       "petId": 16,
       "id": 7
+    },
+    {
+      "date": "2021-01-02",
+      "vetId": 0,
+      "reason": "Check-up",
+      "treatment": "none",
+      "vaccinations": "Rabies",
+      "petId": 18,
+      "id": 8
+    },
+    {
+      "date": "2021-01-02",
+      "vetId": 2,
+      "reason": "allergies",
+      "treatment": "benadryl",
+      "vaccinations": "",
+      "petId": 18,
+      "id": 9
     }
   ],
   "symptoms": [
@@ -145,17 +161,38 @@
     },
     {
       "date": "2020-02-27",
-      "symptom": "Itching",
+      "symptom": "scratching",
       "cause": "allergies",
       "petId": 16,
       "id": 5
     },
     {
-      "date": "2020-02-27",
-      "symptom": "Itching",
+      "date": "2020-05-02",
+      "symptom": "scratching",
       "cause": "grass allergies",
       "petId": 16,
       "id": 6
+    },
+    {
+      "date": "2020-12-21",
+      "symptom": "wobbly knees",
+      "cause": "arthritis",
+      "petId": 16,
+      "id": 7
+    },
+    {
+      "date": "2020-11-14",
+      "symptom": "scratching",
+      "cause": "grass allergies",
+      "petId": 16,
+      "id": 9
+    },
+    {
+      "date": "2021-01-07",
+      "symptom": "attitude problem",
+      "cause": "attention deprivation",
+      "petId": 18,
+      "id": 10
     }
   ]
 }
