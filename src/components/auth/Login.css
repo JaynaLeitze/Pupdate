@@ -67,3 +67,13 @@ fieldset {
   min-width: 15rem;
   min-height: 5rem;
 }
+
+.loginLogo {
+  width: 300px;
+  margin: auto;
+  align-self: center;
+  border-radius: 100%;
+}
+.loginSection {
+  display: flex;
+}

@@ -56,15 +56,18 @@ export const PetDetails = (props) => {
           <b> Chronic Conditions:</b> {pet.petConditions}
         </div>
         <div className="petMedications">
-          <b>Medications:</b>{" "}
+          <b>Medications:</b>
+          {pet.petMeds}
         </div>
-        <button
-          onClick={() => {
-            props.history.push(`/pets/edit/${pet.id}`);
-          }}
-        >
-          Edit Pet
-        </button>
+        <div className="editButton">
+          <button
+            onClick={() => {
+              props.history.push(`/pets/edit/${pet.id}`);
+            }}
+          >
+            Edit Pet
+          </button>
+        </div>
       </section>
       <section className="detailSymptoms">
         <div></div>
@@ -78,19 +81,19 @@ export const PetDetails = (props) => {
             );
           })}
         </div>
-        <div>
+        <div className="addSymptom">
           <Link to={`/symptoms/create/${pet.id}`}>
             <button>Add Symptom</button>
           </Link>
         </div>
-        <div>
+        <div className="viewSymptoms">
           <Link to={`/symptoms/${petId}`}>
             <button>View All Symptoms</button>
           </Link>
         </div>
       </section>
       <section className="medRecords">
-        <h3>Medical Records</h3>
+        <h3>Vet Records</h3>
         <div>
           {vetRecords.map((record) => {
             return (
@@ -111,7 +114,7 @@ export const PetDetails = (props) => {
             );
           })}
         </div>
-        <div>
+        <div className="recordButton">
           <Link to={`/records/create/${pet.id}`}>
             <button>Add Vet Record</button>
           </Link>

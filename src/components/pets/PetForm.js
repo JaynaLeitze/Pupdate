@@ -66,8 +66,8 @@ export const PetForm = (props) => {
       <div className="upload-img">
         <h5>Upload Image</h5>
         <input
-          name="petImage"
           ref={register}
+          name="petImage"
           type="file"
           onChange={uploadImage}
           defaultValue={pet.image}
